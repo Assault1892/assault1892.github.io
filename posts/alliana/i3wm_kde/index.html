@@ -62,24 +62,24 @@
 <p>突然ですがタイル型ウィンドウマネージャってかっこいいですよね。しかしそのシンプルさ故に初期設定が結構ハードです。
 最初は壁紙はおろか，バッテリーの状況もロクに教えてくれません。</p>
 <p>そこでデスクトップ環境である KDE を先に導入し，ウィンドウマネージャだけを i3wm に置き換えることで KDE と i3wm を共存させます。</p>
-<p>メリットは言わずもがな，KDE のリッチな GUI ユーティリティ群を使用しながらも i3wm を使用できることや，通知などのインターフェースが粗方組まれている，そして何よりキーボードで全てが操作できるという点です。
-デメリットは特に思いつきませんが，強いて言うなら依存パッケージが増えてシステムのシンプルさが損なわれることでしょうか。3 日に 1 回ぐらい<code>yay -Syyu</code>したときに鬼のようにアプデがやって来ることがあります。それなりに恐ろしいです。
-とはいえ，私はなんだかんだ KDE もそれなりの頻度で使うので，そのままにしています。<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>
+<p>メリットは言わずもがな，KDE のリッチな GUI ユーティリティ群を使用しながらも i3wm を使用できることや，通知などのインターフェースが粗方組まれている，そして何よりキーボードで全てが操作できるという点です。<br>
+デメリットは特に思いつきませんが，強いて言うなら依存パッケージが増えてシステムのシンプルさが損なわれることでしょうか。3 日に 1 回ぐらい<code>yay -Syyu</code>したときに鬼のようにアプデがやって来ることがあります。それなりに恐ろしいです。<br>
+とはいえ，私はなんだかんだ KDE もそれなりの頻度で使うので，そのままにしています。<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup><br>
 ２つもデスクトップ環境を抱えるのが嫌な人は，i3wm 環境が煮詰まってから KDE を削除しても良いと思います。</p>
 <h2 id=参考にした記事>参考にした記事</h2>
 <p>というかここに書いてある通りに進めればできます。
 <a href=https://github.com/heckelson/i3-and-kde-plasma>heckelson/i3-and-kde-plasma</a></p>
 <h2 id=環境>環境</h2>
-<p>Manjaro KDE Edition を使用します。Debian 系であれば，適宜 pacman を apt に置き換えるなどしてください。
+<p>Manjaro KDE Edition を使用します。Debian 系であれば，適宜 pacman を apt に置き換えるなどしてください。<br>
 他のディストリビューションでも KDE であればおそらく問題ありません。</p>
 <h2 id=1-i3wm-環境に必要なパッケージをインストールする>1. i3wm 環境に必要なパッケージをインストールする</h2>
 <pre><code>$ sudo pacman -Syyu
 $ sudo pacman -S i3-gaps feh i3status
-</code></pre><p><code>i3-gaps</code>: i3wm 本体です。ウィンドウ間に隙間を生ませるために i3 からフォークされたものです。それ以外の機能は i3 と全く変わりません。
-<code>feh</code>: 壁紙を設定するためのパッケージ
+</code></pre><p><code>i3-gaps</code>: i3wm 本体です。ウィンドウ間に隙間を生ませるために i3 からフォークされたものです。それ以外の機能は i3 と全く変わりません。<br>
+<code>feh</code>: 壁紙を設定するためのパッケージ<br>
 <code>i3status</code>: ステータスバーを表示するためのパッケージ</p>
 <h2 id=2-初期設定をする>2. 初期設定をする</h2>
-<p>まずは XSession ファイルを作ります。su 環境で<code>/usr/share/xsessions</code>配下に<code>plasma-i3.desktop</code>ファイルを作ってください。
+<p>まずは XSession ファイルを作ります。su 環境で<code>/usr/share/xsessions</code>配下に<code>plasma-i3.desktop</code>ファイルを作ってください。<br>
 以下のように記述します。</p>
 <pre><code class=language-txt:plasma-i3.desktop data-lang=txt:plasma-i3.desktop>[Desktop Entry]
 Type=XSession
@@ -87,10 +87,10 @@ Exec=env KDEWM=/usr/bin/i3 /usr/bin/startplasma-x11
 DesktopNames=KDE
 Name=i3Plasma
 Comment=Plasma with i3
-</code></pre><p>次に i3wm 環境の設定を行います。<code>i3-config-wizard</code>を実行してください。
-ちなみに実行するターミナルは KDE 環境でも i3 環境でも問題ありません。
+</code></pre><p>次に i3wm 環境の設定を行います。<code>i3-config-wizard</code>を実行してください。<br>
+ちなみに実行するターミナルは KDE 環境でも i3 環境でも問題ありません。<br>
 ウィザードに沿って設定を行い，<code>~/.config/i3/config</code>が作成されれば OK です。</p>
-<p>最後に i3wm 上での Plasma アプリ群の利便性を高めるため，i3wm の設定をします。
+<p>最後に i3wm 上での Plasma アプリ群の利便性を高めるため，i3wm の設定をします。<br>
 <code>~/.config/i3/config</code>を開いて以下の内容をコピペしてください。</p>
 <pre><code># Plasmaアプリ群の利便性向上
 for_window [window_role=&quot;pop-up&quot;] floating enable
@@ -115,20 +115,20 @@ no_focus [class=&quot;plasmashell&quot; window_type=&quot;notification&quot;]
 <p><del>共存感を出すために</del>KDE に入っているコンソールに置き換えます。</p>
 <pre><code># bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+return exec konsole
-</code></pre><p>config ファイルの編集を適用するには Win+Shift+c を入力します。
+</code></pre><p>config ファイルの編集を適用するには Win+Shift+c を入力します。<br>
 Win キー+Return で Konsole が起動すれば成功です。</p>
-<p>簡単に bindsym に関して説明すると，<code>bindsym [設定したいキーバインド] [コマンド]</code>で設定したキーバインドによってコマンドが実行されます。
+<p>簡単に bindsym に関して説明すると，<code>bindsym [設定したいキーバインド] [コマンド]</code>で設定したキーバインドによってコマンドが実行されます。<br>
 例えば，<code>bindsym $mod+F2 exec firefox</code>と記述した場合，Win+F2 で Firefox が起動します。</p>
 <h3 id=壁紙を設定する>壁紙を設定する</h3>
 <p>feh を使います。</p>
 <pre><code>$ feh /path/to/image
-</code></pre><p>すると壁紙にしたい画像が別ウィンドウで表示されると思います。
-別ウィンドウ上で右クリックし，File>Background>Set Scaled を選択します。背景が変更されます。
+</code></pre><p>すると壁紙にしたい画像が別ウィンドウで表示されると思います。<br>
+別ウィンドウ上で右クリックし，File>Background>Set Scaled を選択します。背景が変更されます。<br>
 config に</p>
 <pre><code>exec --no-startup-id ~/.fehbg
 </code></pre><p>を書き込むと，起動時に背景が設定されます。</p>
 <h3 id=ウィンドウ間にゆとりを持たせる>ウィンドウ間にゆとりを持たせる</h3>
-<p>今のままでは複数ウィンドウを開いたときにかなり窮屈だと思います。
+<p>今のままでは複数ウィンドウを開いたときにかなり窮屈だと思います。<br>
 config に以下の内容を追記します。</p>
 <pre><code>gaps inner 14
 gaps outer -2
@@ -138,11 +138,11 @@ smart_gaps on
 smart_borders on
 </code></pre><p>いい感じに余白が出来ると思います。</p>
 <h2 id=最後に>最後に</h2>
-<p>i3wm の良さを残しつつも，フォント設定やディスプレイ設定など，CUI から設定が少し難しい部分を KDE システム設定アプリを使用して GUI から設定できるのはやはり快適です。
-<strong>i3wm の世界は沼です。</strong>
-どれぐらい沼かと言うと，<a href=https://www.reddit.com/r/unixporn>日々世界中の人がカスタマイズした自分のデスクトップ環境を貼る reddit</a>があるぐらいには沼です。
-ぜひ自分好みのデスクトップ環境に仕上げてみてください。
-参考に私の<a href=https://github.com/Allianaab2m/dotfiles/blob/main/dot_i3/config>クソ雑な config</a>と画面構成の一例を置いておきます。
+<p>i3wm の良さを残しつつも，フォント設定やディスプレイ設定など，CUI から設定が少し難しい部分を KDE システム設定アプリを使用して GUI から設定できるのはやはり快適です。</p>
+<p><strong>i3wm の世界は沼です。</strong></p>
+<p>どれぐらい沼かと言うと，<a href=https://www.reddit.com/r/unixporn>日々世界中の人がカスタマイズした自分のデスクトップ環境を貼る reddit</a>があるぐらいには沼です。<br>
+ぜひ自分好みのデスクトップ環境に仕上げてみてください。<br>
+参考に私の<a href=https://github.com/Allianaab2m/dotfiles/blob/main/dot_i3/config>クソ雑な config</a>と画面構成の一例を置いておきます。<br>
 <img src=image/Untitled30.jpg alt=画像></p>
 <section class=footnotes role=doc-endnotes>
 <hr>
