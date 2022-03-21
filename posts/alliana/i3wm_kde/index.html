@@ -1,0 +1,229 @@
+<!doctype html><html class=no-js lang=ja>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>KDEとi3wmを共存させる - /home/assault</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content="Zennに投げるつもりだったボツ記事です。KDEのウィンドウマネージャをi3wmに置き換えるついでにある程度設定をします。">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="KDEとi3wmを共存させる">
+<meta name=twitter:description content="Zennに投げるつもりだったボツ記事です。KDEのウィンドウマネージャをi3wmに置き換えるついでにある程度設定をします。">
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel="shortcut icon" href=/favicon.ico>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<div class="container header__container">
+<div class=logo>
+<a class=logo__link href=/ title=/home/assault rel=home>
+<div class="logo__item logo__text">
+<div class=logo__title>/home/assault</div>
+<div class=logo__tagline>雑記、翻訳多め | 気が向いた時にレビューっぽい物を書きます</div>
+</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>メニュー</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/posts/about_me/>
+<span class=menu__text>About Me</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>KDEとi3wmを共存させる</h1>
+<p class=post__lead>Zennに投げるつもりだったボツ記事</p>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-03-21T00:00:00Z>March 21, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/%E9%9B%91%E5%A4%9A/ rel=category>雑多</a>
+</span>
+</div></div>
+</header><div class="content post__content clearfix">
+<p><strong>友人のブログにボツ記事を投げる男，<del>スパイダーマ！</del></strong></p>
+<p>ということであさるとの承諾を得てZennに投げるつもりだった記事を投げます。
+初めまして，<a href=https://twitter.com/Alliana_ab2m>ありあな</a>です。</p>
+<p>突然ですがタイル型ウィンドウマネージャってかっこいいですよね。しかしそのシンプルさ故に初期設定が結構ハードです。
+最初は壁紙はおろか，バッテリーの状況もロクに教えてくれません。</p>
+<p>そこでデスクトップ環境であるKDEを先に導入し，ウィンドウマネージャだけをi3wmに置き換えることでKDEとi3wmを共存させます。</p>
+<p>メリットは言わずもがな，KDEのリッチなGUIユーティリティ群を使用しながらもi3wmを使用できることや，通知などのインターフェースが粗方組まれている，そして何よりキーボードで全てが操作できるという点です。
+デメリットは特に思いつきませんが，強いて言うなら依存パッケージが増えてシステムのシンプルさが損なわれることでしょうか。3日に1回ぐらい<code>yay -Syyu</code>したときに鬼のようにアプデがやって来ることがあります。それなりに恐ろしいです。
+とはいえ，私はなんだかんだKDEもそれなりの頻度で使うので，そのままにしています。<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>
+２つもデスクトップ環境を抱えるのが嫌な人は，i3wm環境が煮詰まってからKDEを削除しても良いと思います。</p>
+<h2 id=参考にした記事>参考にした記事</h2>
+<p>というかここに書いてある通りに進めればできます。
+<a href=https://github.com/heckelson/i3-and-kde-plasma>heckelson/i3-and-kde-plasma</a></p>
+<h2 id=環境>環境</h2>
+<p>Manjaro KDE Editionを使用します。Debian系であれば，適宜pacmanをaptに置き換えるなどしてください。
+他のディストリビューションでもKDEであればおそらく問題ありません。</p>
+<h2 id=1-i3wm環境に必要なパッケージをインストールする>1. i3wm環境に必要なパッケージをインストールする</h2>
+<pre><code>$ sudo pacman -Syyu
+$ sudo pacman -S i3-gaps feh i3status
+</code></pre><p><code>i3-gaps</code>: i3wm本体です。ウィンドウ間に隙間を生ませるためにi3からフォークされたものです。それ以外の機能はi3と全く変わりません。
+<code>feh</code>: 壁紙を設定するためのパッケージ
+<code>i3status</code>: ステータスバーを表示するためのパッケージ</p>
+<h2 id=2-初期設定をする>2. 初期設定をする</h2>
+<p>まずはXSessionファイルを作ります。su環境で<code>/usr/share/xsessions</code>配下に<code>plasma-i3.desktop</code>ファイルを作ってください。
+以下のように記述します。</p>
+<pre><code class=language-txt:plasma-i3.desktop data-lang=txt:plasma-i3.desktop>[Desktop Entry]
+Type=XSession
+Exec=env KDEWM=/usr/bin/i3 /usr/bin/startplasma-x11
+DesktopNames=KDE
+Name=i3Plasma
+Comment=Plasma with i3
+</code></pre><p>次にi3wm環境の設定を行います。<code>i3-config-wizard</code>を実行してください。
+ちなみに実行するターミナルはKDE環境でもi3環境でも問題ありません。
+ウィザードに沿って設定を行い，<code>~/.config/i3/config</code>が作成されればOKです。</p>
+<p>最後にi3wm上でのPlasmaアプリ群の利便性を高めるため，i3wmの設定をします。
+<code>~/.config/i3/config</code>を開いて以下の内容をコピペしてください。</p>
+<pre><code># Plasmaアプリ群の利便性向上
+for_window [window_role=&quot;pop-up&quot;] floating enable
+for_window [window_role=&quot;task_dialog&quot;] floating enable
+
+for_window [class=&quot;yakuake&quot;] floating enable
+for_window [class=&quot;systemsettings&quot;] floating enable
+for_window [class=&quot;plasmashell&quot;] floating enable;
+for_window [class=&quot;Plasma&quot;] floating enable; border none
+for_window [title=&quot;plasma-desktop&quot;] floating enable; border none
+for_window [title=&quot;win7&quot;] floating enable; border none
+for_window [class=&quot;krunner&quot;] floating enable; border none
+for_window [class=&quot;Kmix&quot;] floating enable; border none
+for_window [class=&quot;Klipper&quot;] floating enable; border none
+for_window [class=&quot;Plasmoidviewer&quot;] floating enable; border none
+for_window [class=&quot;(?i)*nextcloud*&quot;] floating disable
+for_window [class=&quot;plasmashell&quot; window_type=&quot;notification&quot;] border none, move right 700px, move down 450px
+no_focus [class=&quot;plasmashell&quot; window_type=&quot;notification&quot;]
+</code></pre><p>ここまで終わったら，一度ログアウトしてログイン画面(SDDM)に戻り，左下のPlasma(X11)をクリックし，i3Plasmaを選択してログインしてください。</p>
+<h2 id=3-i3wmを設定する>3. i3wmを設定する</h2>
+<h3 id=ターミナルをkonsoleに変更する>ターミナルをKonsoleに変更する</h3>
+<p><del>共存感を出すために</del>KDEに入っているコンソールに置き換えます。</p>
+<pre><code># bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+return exec konsole
+</code></pre><p>configファイルの編集を適用するにはWin+Shift+cを入力します。
+Winキー+ReturnでKonsoleが起動すれば成功です。</p>
+<p>簡単にbindsymに関して説明すると，<code>bindsym [設定したいキーバインド] [コマンド]</code>で設定したキーバインドによってコマンドが実行されます。
+例えば，<code>bindsym $mod+F2 exec firefox</code>と記述した場合，Win+F2でFirefoxが起動します。</p>
+<h3 id=壁紙を設定する>壁紙を設定する</h3>
+<p>fehを使います。</p>
+<pre><code>$ feh /path/to/image
+</code></pre><p>すると壁紙にしたい画像が別ウィンドウで表示されると思います。
+別ウィンドウ上で右クリックし，File>Background>Set Scaledを選択します。背景が変更されます。
+configに</p>
+<pre><code>exec --no-startup-id ~/.fehbg
+</code></pre><p>を書き込むと，起動時に背景が設定されます。</p>
+<h3 id=ウィンドウ間にゆとりを持たせる>ウィンドウ間にゆとりを持たせる</h3>
+<p>今のままでは複数ウィンドウを開いたときにかなり窮屈だと思います。
+configに以下の内容を追記します。</p>
+<pre><code>gaps inner 14
+gaps outer -2
+
+smart_gaps on
+
+smart_borders on
+</code></pre><p>いい感じに余白が出来ると思います。</p>
+<h2 id=最後に>最後に</h2>
+<p>i3wmの良さを残しつつも，フォント設定やディスプレイ設定など，CUIから設定が少し難しい部分をKDEシステム設定アプリを使用してGUIから設定できるのはやはり快適です。
+<strong>i3wmの世界は沼です。</strong>
+どれぐらい沼かと言うと，<a href=https://www.reddit.com/r/unixporn>日々世界中の人がカスタマイズした自分のデスクトップ環境を貼るreddit</a>があるぐらいには沼です。
+ぜひ自分好みのデスクトップ環境に仕上げてみてください。
+参考に私の<a href=https://github.com/Allianaab2m/dotfiles/blob/main/dot_i3/config>クソ雑なconfig</a>と画面構成の一例を置いておきます。
+<img src=image/Untitled30.jpg alt=画像></p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>というより，Manjaroのi3エディションは私の環境ではなぜか不安定だったので，公式フレーバーのKDEを選ぶ他無かった，という結果でもあります。&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+</article>
+</main>
+<div class="authorbox clearfix">
+<figure class=authorbox__avatar>
+<img alt="あさると avatar" src=/img/avatar.png class=avatar height=90 width=90>
+</figure>
+<div class=authorbox__header>
+<span class=authorbox__name>あさるとについて</span>
+</div>
+<div class=authorbox__description>
+PAYDAY2とVRChatを主に遊んでいます / フロントエンドをたまに触る
+</div>
+</div>
+</div>
+<aside class=sidebar>
+<div class="widget-recent widget">
+<h4 class=widget__title>最近の投稿</h4>
+<div class=widget__content>
+<ul class=widget__list>
+<li class=widget__item><a class=widget__link href=/posts/alliana/i3wm_kde/>KDEとi3wmを共存させる</a></li>
+<li class=widget__item><a class=widget__link href=/posts/about_me/>About Me</a></li>
+<li class=widget__item><a class=widget__link href=/posts/aviutl/encode_cpu_vs_gpu/>CPUとGPU(NVEnc)でどれほどの差が出るのか？</a></li>
+<li class=widget__item><a class=widget__link href=/posts/payday2/payday2_anticheat_guide/>PAYDAY 2のアンチチートはどのように動くのか？</a></li>
+<li class=widget__item><a class=widget__link href=/posts/payday2/how_to_play_old_version_payday2/>古いバージョンのPAYDAY 2を遊ぶ方法(マルチプレイヤー対応!)</a></li>
+<li class=widget__item><a class=widget__link href=/posts/vrchat/avatardynamics_openbeta/>日本語版 AvatarDynamics オープンベータリリース告知</a></li>
+</ul>
+</div>
+</div>
+<div class="widget-categories widget">
+<h4 class=widget__title>カテゴリー</h4>
+<div class=widget__content>
+<ul class=widget__list>
+<li class=widget__item>
+<a class=widget__link href=/categories/aviutl/>Aviutl</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/payday-2/>PAYDAY 2</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/vrchat/>VRChat</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/%E7%BF%BB%E8%A8%B3/>翻訳</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/%E9%9B%91%E5%A4%9A/>雑多</a></li>
+</ul>
+</div>
+</div>
+<div class="widget-social widget">
+<h4 class="widget-social__title widget__title">ソーシャル</h4>
+<div class="widget-social__content widget__content">
+<div class="widget-social__item widget__item">
+<a class="widget-social__link widget__link btn" title=Twitter rel="noopener noreferrer" href=https://twitter.com/SzlyNe_ target=_blank><svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5.0-78.8 35.3-78.8 78.8.0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3C20 26 16.1 39.6 16.1 54c0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1.0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4.0-12.6-.4-18.8-1.1C34.9 299 76.3 312 120.8 312c144.9.0 224.1-120 224.1-224.1.0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+<span>Twitter</span>
+</a>
+</div>
+<div class="widget-social__item widget__item">
+<a class="widget-social__link widget__link btn" title=GitHub rel="noopener noreferrer" href=https://github.com/Assault1892 target=_blank><svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0C85.9.0.0 85.8.0 191.7c0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2.0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8.0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7.0.0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4.0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5.0 25.6-.2 46.3-.2 52.6.0 5.1 3.5 11.1 13.2 9.2C329 348.2 384 276.4 384 191.7 384 85.8 298 0 192 0z"/></svg>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+</div><a class=twitter-timeline data-tweet-limit=4 href="https://twitter.com/SzlyNe_?ref_src=twsrc%5Etfw">Tweets by SzlyNe_</a> <script async src=https://platform.twitter.com/widgets.js></script>
+</aside>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 Assault.
+<span class=footer__copyright-credits>このサイトは <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> と <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a> テーマで生成されています。</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+</body>
+</html>
