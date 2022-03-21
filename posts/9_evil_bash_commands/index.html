@@ -1,0 +1,321 @@
+<!doctype html><html class=no-js lang=ja>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>9つの危険なBashコマンド - /home/assault</title>
+<script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
+<meta name=description content="9つの危険なコマンド集です。">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="9つの危険なBashコマンド">
+<meta name=twitter:description content="9つの危険なコマンド集です。">
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link rel=dns-prefetch href=//fonts.googleapis.com>
+<link rel=dns-prefetch href=//fonts.gstatic.com>
+<link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/css/custom.css>
+<link rel="shortcut icon" href=/favicon.ico>
+</head>
+<body class=body>
+<div class="container container--outer">
+<header class=header>
+<div class="container header__container">
+<div class=logo>
+<a class=logo__link href=/ title=/home/assault rel=home>
+<div class="logo__item logo__text">
+<div class=logo__title>/home/assault</div>
+<div class=logo__tagline>雑記、翻訳多め | 気が向いた時にレビューっぽい物を書きます</div>
+</div>
+</a>
+</div>
+<nav class=menu>
+<button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>メニュー</span>
+</button>
+<ul class=menu__list>
+<li class=menu__item>
+<a class=menu__link href=/posts/about_me/>
+<span class=menu__text>About Me</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="wrapper flex">
+<div class=primary>
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>9つの危険なBashコマンド</h1>
+<p class=post__lead>元ページ: https://dev.to/devmount/9-evil-bash-commands-explained-4k5e</p>
+<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-03-21T00:00:00Z>March 21, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/%E9%9B%91%E5%A4%9A/ rel=category>雑多</a>
+</span>
+</div></div>
+</header><div class="content post__content clearfix">
+<h1 id=9-つの超危険な-bash-コマンド一覧>9 つの超危険な Bash コマンド一覧</h1>
+<p>初めて「ターミナル」を触った事のことを私は覚えています。<br>
+黒いウィンドウに文字を入力するだけで、全てのファイルにアクセスでき、全てのプログラムを実行でき、システム全てを完全に支配下に置ける事に気付いた時の感動。<br>
+そして、全てを破壊し、回復不能にしてしまう事への恐怖を。</p>
+<p>私は正確には「システム管理者」ではありませんが、何年以上も Linux/UNIX ベースのシステムで作業しており、その中で何度もコマンドを実行しようとして Enter キーを押すのを躊躇ったことがあります。</p>
+<p>以下では、「何があっても使用してはならない」か、「非常に慎重に実行する必要がある」コマンドをいくつか紹介します。<br>
+bash を初めて扱うユーザーならば新しいことが学べることを期待しており、<br>
+bash 経験者であるならコマンドの説明を見る前に何が起こるか自分で推測してみてください。</p>
+<p>注意: 以下のコマンドは私が集めたものですが、いくつかは<a href=https://www.cyberciti.biz/tips/my-10-unix-command-line-mistakes.html>別の投稿</a>からも確認できます。<br>
+そして、最後の警告です。<br>
+<strong>⚠ 重要なシステムでこれらのコマンドを実行してはいけません！⚠</strong></p>
+<h2 id=1-破壊的ディレクトリ変更--destructive-directory-changing->1. 破壊的ディレクトリ変更 ( Destructive directory changing )</h2>
+<p>古典的な <code>rm -rf /*</code> でもいいのですが、たまには別バリエーションを。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>alias cd<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;rm -rf&#39;</span>
+</code></pre></div><h3 id=-何が起こるの>💡 何が起こるの？</h3>
+<ul>
+<li><code>alias</code>コマンドは、エイリアスやショートカットを指定する bash コマンドです。<br>
+構文は <code>alias alias_name='command_to_run'</code> のようになります。</li>
+<li><code>cd</code> は <code>Change Directory</code> の略です。</li>
+<li><code>rm -rf</code> は実行するコマンドです。これは決して「早くメール読め (readmail - realfast)」といった意味ではありません。<br>
+「指定されたディレクトリの中身を警告なしに全て削除する」といったものです。</li>
+</ul>
+<p>あなたが一瞬だけ席を外した隙に、悪意のある人間が開いたままのウィンドウにちょっとだけ文字を入力することができたとしたら？<br>
+席に戻りディレクトリを移動しようとした後、深い絶望に襲われる事でしょう。</p>
+<p>幸いにも <code>alias</code> コマンドは、ターミナルのセッション開始時に読み込まれるファイル（<code>~/.bashrc</code>など）に記述されていない限り、現在開いているセッション中でしか有効になりません。</p>
+<h3 id=-どうやって防ぐの>🛡 どうやって防ぐの？</h3>
+<p>新しいエイリアスを追加する際、単に追加するだけではなく再確認が必要です。<br>
+<code>alias</code> で現在のエイリアスを確認することができ、 <code>unalias alias_name</code> で既存のエイリアスを削除できます。</p>
+<p>いつのまにかファイルが削除されることを防ぐため、<code>~/.bashrc</code>に以下のエイリアスを追加しておくことをオススメします。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>alias rm<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;rm -i&#39;</span>
+</code></pre></div><p>これにより、なにか別のコマンドのエイリアスに <code>rm</code> が仕込まれていたとしても、削除する前に確認することができます。<br>
+<em>ちなみに、このコマンドでは簡単に破壊することができません。<br>
+ルートディレクトリでの実行は <code>--no-preserve-root</code> が必要になります。</em></p>
+<h2 id=2-メモリかじり虫--memory-eater->2. メモリかじり虫 ( Memory-eater )</h2>
+<p>信じられないかもしれませんが、以下はれっきとした bash コマンドです。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>:<span style=color:#f92672>(){</span>:|: &amp;<span style=color:#f92672>}</span>;:
+</code></pre></div><h3 id=-何が起こるの-1>💡 何が起こるの？</h3>
+<p>簡単に言えば、終了条件なしの再帰処理です。</p>
+<p>まず、<code>:</code>という関数を定義します。<br>
+これは関数内で自分を 2 回呼び出しています。<br>
+最後の<code>:</code>で最初の関数呼び出しをします。<br>
+すなわち、分かりやすく書くと以下のようになります。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>evil <span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+  evil|evil &amp;
+<span style=color:#f92672>}</span>
+evil
+</code></pre></div><p>これは Forkbomb とも言われ、実行すると全てのメモリと CPU リソースをすぐに食い潰します。<br>
+システム全体がフリーズしてしまう可能性のある、DoS 攻撃の一種です。<br>
+僅か 12 バイトのコマンドでこのような攻撃が実行できるのは驚くべき事でしょう。</p>
+<h3 id=-どうやって防ぐの-1>🛡 どうやって防ぐの？</h3>
+<p>繰り返しや再帰する bash 関数を使っている場合は、適切に終了するよう条件を確認し、隔離されたテスト環境で実行してください。</p>
+<p>Forkbomb はプロセスを無制限に起動するため、システムを保護する唯一の方法はローカルユーザーが実行できるプロセスの数を制限する事です。<br>
+<code>/etc/security/limits.conf</code> を編集することで制限できます。<br>
+ユーザー 1 人あたり 200 から 300 程度のプロセスを同時に使用するため、全体で 2000 プロセス程度に制限することで制限を厳しくしすぎる事なくシステムを Forkbomb から防御することができます。</p>
+<h2 id=3-メモリーゼロ--zero-memory->3. メモリーゼロ ( Zero Memory )</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>dd <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>/dev/zero of<span style=color:#f92672>=</span>/dev/sda
+</code></pre></div><h3 id=-何が起こるの-2>💡 何が起こるの？</h3>
+<ul>
+<li><code>dd</code> はあるファイルやデバイスから別の何かにデータをコピーするコマンドです。</li>
+<li><code>if=</code> にはコピー元のファイル/デバイスを指定し、 <code>/dev/zero</code> は null で埋め尽くされた無制限のリソースです。</li>
+<li><code>of=</code> にはコピー先のファイル/デバイスを指定し、 <code>/dev/sda</code> はディスクドライブです。</li>
+</ul>
+<p>まとめると、これはディスク全体を消去する優れた方法であり、大量のデータを失える最速手段です。</p>
+<h3 id=-どうやって防ぐの-2>🛡 どうやって防ぐの？</h3>
+<p>残念ですが、 <code>rm</code> にあるような <code>-i</code> のようなオプションは存在しません。<br>
+<code>dd</code> コマンドで指定するデバイスが本当に正しい物であるか確認するしかありません。<br>
+ちょっとでもリスクがあるのなら <code>dd</code> コマンドを実行しないでください。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>alias dd<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;echo &#34;no dd command available&#34;&#39;</span>
+</code></pre></div><p>このエイリアスを登録しておけば、 <code>dd</code> は動作しなくなります。</p>
+<h2 id=4-回復不能--zero-recovery->4. 回復不能 ( Zero recovery )</h2>
+<p>上記コマンドの別バージョンも考えられます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#66d9ef>for</span> i in <span style=color:#f92672>{</span>1..10<span style=color:#f92672>}</span>;<span style=color:#66d9ef>do</span> dd <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>/dev/urandom of<span style=color:#f92672>=</span>/dev/sda;<span style=color:#66d9ef>done</span>
+</code></pre></div><h3 id=-何が起こるの-3>💡 何が起こるの？</h3>
+<p>これによりディスク全体がランダムバイトで 10 回上書きされるため、データ復旧の可能性が更に低下します。</p>
+<h3 id=-どうやって防ぐの-3>🛡 どうやって防ぐの？</h3>
+<p>これも <code>dd</code> コマンドを使用するため、同じ方法で回避できます。</p>
+<h2 id=5-未コミット完全喪失--uncommited-and-lost->5. 未コミット、完全喪失 ( Uncommited and lost )</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git reset --hard
+</code></pre></div><h3 id=-何が起こるの-4>💡 何が起こるの？</h3>
+<ul>
+<li><code>git reset</code> は git リポジトリの HEAD を最後に commit した時点にリセットします。</li>
+<li><code>--hard</code> はワーキングツリーをリセットします。</li>
+</ul>
+<p>要は最後の commit 以降のワーキングツリーの変更は全て破棄されます。</p>
+<p>言い換えると、 commit してないあらゆる変更がなかった事になります。<br>
+git はそれらを追跡していないため、復元する方法は一つもありません。</p>
+<h3 id=-どうやって防ぐの-4>🛡 どうやって防ぐの？</h3>
+<p>単純です。 <code>--hard</code> オプションを利用しなければいい話です。<br>
+使う必要が出てきた場合は、保存しておかねばならないローカル変更が存在しないかを確認してください。<br>
+<code>git status</code> の出力が空であるか、 commit していないデータを全て確実に削除したい場合にのみハードリセットを行うことを推奨します。</p>
+<h2 id=6-圧縮式破壊--demolition-by-compression->6. 圧縮式破壊 ( Demolition by compression )</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>tar -czvf /path/to/file archive.tgz
+<span style=color:#75715e># ↓のつもり</span>
+tar -czvf archive.tgz /path/to/file
+</code></pre></div><h3 id=-何が起こるの-5>💡 何が起こるの？</h3>
+<ul>
+<li><code>tar -czvf</code> は新しいアーカイブを作成し、gzip 圧縮し、詳細を画面に出力し、アーカイブを指定したファイルに出力します。</li>
+<li><code>archive.tgz</code> は出力するファイル名です。</li>
+<li><code>/path/to/file</code> は圧縮する対象のパスです。</li>
+</ul>
+<p>この順番はとても重要です。<br>
+圧縮したいファイルを 1 番目に持ってきてしまった場合、tar はそのファイルを上書きしてアーカイブの作成を行ってしまいます。<br>
+その後 2 番目に指定されたファイルを見に行くもそれが存在しないことに気が付くため、最初のファイルは破壊されてしまいます。<br>
+これは、ファイルのバックアップを行おうとして引数の順番を間違えてしまった場合には特に深刻になります。</p>
+<h3 id=-どうやって防ぐの-5>🛡 どうやって防ぐの？</h3>
+<p>全てのオプションを一括指定するのではなく、 <code>-f</code> オプションのみ分離しまたロングオプションを使うことでわかりやすくなります。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>tar -czv --file archive.tgz /path/to/file/to/compress
+</code></pre></div><h2 id=7-多すぎる許可--too-many-rights->7. 多すぎる許可 ( Too many rights )</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>chmod -R <span style=color:#ae81ff>777</span> /
+<span style=color:#75715e># ↓のつもり</span>
+chmod -R <span style=color:#ae81ff>777</span> ./
+</code></pre></div><h3 id=-何が起こるの-6>💡 何が起こるの？</h3>
+<ul>
+<li><code>chmod -R</code> はそのファイルの権限を再帰的に変更します。</li>
+<li><code>777</code> は権限の指定で、あらゆる操作を許可します。</li>
+<li><code>./</code> は変更対象のディレクトリまたはファイルです。</li>
+</ul>
+<p>対象ディレクトリとしてうっかりルートディレクトリを指定してしまうと、システム全体の権限が破壊されてしまい、再起不能になってしまいます。</p>
+<h3 id=-どうやって防ぐの-6>🛡 どうやって防ぐの？</h3>
+<p><code>chmod</code> には <code>--preserve-root</code> が指定可能です。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>alias chmod<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;chmod --preserve-root&#39;</span>
+</code></pre></div><p>これにより、ルートディレクトリからの再帰的 chmod は拒否されるようになります。</p>
+<h2 id=8-諸悪の根源--the-root-of-all-evil->8. 諸悪の根源 ( The root of all evil )</h2>
+<p>所有者の変更にも同じミスが起こりえます。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>chown -R root:root /
+<span style=color:#75715e># ↓のつもり</span>
+chown -R root:root ./
+</code></pre></div><h3 id=-何が起こるの-7>💡 何が起こるの？</h3>
+<ul>
+<li><code>chown -R</code> は所有者を再帰的に変更します。</li>
+<li><code>root:root</code> は所有者とグループの指定です。</li>
+<li><code>./</code> は変更対象のディレクトリもしくはファイルです。</li>
+</ul>
+<p>このコマンドは OS の再インストールが必要になる可能性が最も高く、全てのファイルを使用不能にしてしまいます。</p>
+<h3 id=-どうやって防ぐの-7>🛡 どうやって防ぐの？</h3>
+<p>対処法も <code>chmod</code> と同じです。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>alias chown<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;chown --preserve-root&#39;</span>
+</code></pre></div><p>これにより、ルートディレクトリからの再帰的 chown は拒否されます。</p>
+<h2 id=9-暗号化と破壊活動--encrypted-and-destroyed->9. 暗号化と破壊活動 ( Encrypted and destroyed )</h2>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>fsck -y /dev/sda
+</code></pre></div><h3 id=-何が起こるの-8>💡 何が起こるの？</h3>
+<ul>
+<li><code>fsck</code> はファイルシステムのチェックを行います。</li>
+<li><code>-y</code> は検出されたファイルシステムの破損を自動的に修正するオプションです。</li>
+<li><code>/dev/sda</code> はチェック対象のボリュームです。</li>
+</ul>
+<p>これは良い事だと言えるでしょう。<br>
+ただし、暗号化されたボリュームの場合は必ずしもそうであるとは限りません。<br>
+暗号化されているボリュームに <code>fsck -y</code> を実行すると、完全に破壊されてしまいます。</p>
+<h3 id=-どうやって防ぐの-8>🛡 どうやって防ぐの？</h3>
+<p>暗号化されていない通常のボリュームであることを確認した上で <code>fsck</code> を使用してください。</p>
+<h2 id=最後に>最後に</h2>
+<p>ちょっとしたコマンドを打つだけで、データを破壊したりシステムをダメにするのが非常に・とてつもなく簡単であることがわかりました。</p>
+<p>結論として、最善の方法は何かを実行する前に「何を入力しようとしているのか把握し」「タイプミスを確認すること」です。<br>
+コマンドのコピペではありません。bash コマンドに置いては真実なのかもしれませんが&mldr;。</p>
+<p>また、常にバックアップ体制も取っておきましょう。</p>
+<p>上記コマンドの殆ど全ては root 権限が必要になります。<br>
+そのため、root で作業する際はより一層注意する必要があります。</p>
+<p>他にもヤバいコマンドを知っている人がいたら、是非コメントで教えて下さい。</p>
+<p>免責事項: 上記コマンドを試してシステムに重大な損害を与えてしまったとしても、私は責任を追いません。<br>
+テストしたいのであれば仮想マシンのような、完全に安全な環境を用意してください。<br>
+警告はしましたからね。</p>
+<h2 id=コメント欄>コメント欄</h2>
+<ul>
+<li>最上部に注意書き置いといた方がいいよ。どんだけ悪い事か理解してない人がいるかも。
+<ul>
+<li>ありがとう。追加しといたよ！</li>
+</ul>
+</li>
+<li>4 番をもっと強化してみたよ。並列モードで OpenSSL の AES 暗号を使用し、ランダムなパスワードでプレーンゼロのストリームを暗号化するんだ。それを sda に書き込んで破壊する。</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>openssl enc -aes-256-ctr -pass pass:<span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>dd <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>/dev/urandom bs<span style=color:#f92672>=</span><span style=color:#ae81ff>128</span> count<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span> 2&gt;/dev/null | base64<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span> -nosalt &lt;/dev/zero &gt; /dev/sda1
+</code></pre></div><ul>
+<li>これ BOFH っぽいね。
+<ul>
+<li>わかる！</li>
+</ul>
+</li>
+<li>この前見かけた evli.sh の Forkbomb についてよく分からなかったけど、コレ見て理解できた！</li>
+</ul>
+<h1 id=感想>感想</h1>
+<pre><code>あなたはシステム管理者から通常の講習を受けたはずです。
+これは通常、以下の3点に要約されます:
+    #1) 他人のプライバシーを尊重すること。
+    #2) タイプする前に考えること。
+    #3) 大いなる力には大いなる責任が伴うこと。
+</code></pre>
+</div>
+</article>
+</main>
+<div class="authorbox clearfix">
+<figure class=authorbox__avatar>
+<img alt="あさると avatar" src=/img/avatar.png class=avatar height=90 width=90>
+</figure>
+<div class=authorbox__header>
+<span class=authorbox__name>あさるとについて</span>
+</div>
+<div class=authorbox__description>
+PAYDAY2とVRChatを主に遊んでいます / フロントエンドをたまに触る
+</div>
+</div>
+</div>
+<aside class=sidebar>
+<div class="widget-recent widget">
+<h4 class=widget__title>最近の投稿</h4>
+<div class=widget__content>
+<ul class=widget__list>
+<li class=widget__item><a class=widget__link href=/posts/9_evil_bash_commands/>9つの危険なBashコマンド</a></li>
+<li class=widget__item><a class=widget__link href=/posts/alliana/i3wm_kde/>KDEとi3wmを共存させる</a></li>
+<li class=widget__item><a class=widget__link href=/posts/about_me/>About Me</a></li>
+<li class=widget__item><a class=widget__link href=/posts/aviutl/encode_cpu_vs_gpu/>CPUとGPU(NVEnc)でどれほどの差が出るのか？</a></li>
+<li class=widget__item><a class=widget__link href=/posts/payday2/payday2_anticheat_guide/>PAYDAY 2のアンチチートはどのように動くのか？</a></li>
+<li class=widget__item><a class=widget__link href=/posts/payday2/how_to_play_old_version_payday2/>古いバージョンのPAYDAY 2を遊ぶ方法(マルチプレイヤー対応!)</a></li>
+<li class=widget__item><a class=widget__link href=/posts/vrchat/avatardynamics_openbeta/>日本語版 AvatarDynamics オープンベータリリース告知</a></li>
+</ul>
+</div>
+</div>
+<div class="widget-categories widget">
+<h4 class=widget__title>カテゴリー</h4>
+<div class=widget__content>
+<ul class=widget__list>
+<li class=widget__item>
+<a class=widget__link href=/categories/aviutl/>Aviutl</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/payday-2/>PAYDAY 2</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/vrchat/>VRChat</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/%E7%BF%BB%E8%A8%B3/>翻訳</a></li>
+<li class=widget__item>
+<a class=widget__link href=/categories/%E9%9B%91%E5%A4%9A/>雑多</a></li>
+</ul>
+</div>
+</div>
+<div class="widget-social widget">
+<h4 class="widget-social__title widget__title">ソーシャル</h4>
+<div class="widget-social__content widget__content">
+<div class="widget-social__item widget__item">
+<a class="widget-social__link widget__link btn" title=Twitter rel="noopener noreferrer" href=https://twitter.com/SzlyNe_ target=_blank><svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5.0-78.8 35.3-78.8 78.8.0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3C20 26 16.1 39.6 16.1 54c0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1.0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4.0-12.6-.4-18.8-1.1C34.9 299 76.3 312 120.8 312c144.9.0 224.1-120 224.1-224.1.0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+<span>Twitter</span>
+</a>
+</div>
+<div class="widget-social__item widget__item">
+<a class="widget-social__link widget__link btn" title=GitHub rel="noopener noreferrer" href=https://github.com/Assault1892 target=_blank><svg class="widget-social__link-icon icon icon-github" width="24" height="24" viewBox="0 0 384 374"><path d="m192 0C85.9.0.0 85.8.0 191.7c0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2.0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8.0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7.0.0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4.0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5.0 25.6-.2 46.3-.2 52.6.0 5.1 3.5 11.1 13.2 9.2C329 348.2 384 276.4 384 191.7 384 85.8 298 0 192 0z"/></svg>
+<span>GitHub</span>
+</a>
+</div>
+</div>
+</div><a class=twitter-timeline data-tweet-limit=4 href="https://twitter.com/SzlyNe_?ref_src=twsrc%5Etfw">Tweets by SzlyNe_</a> <script async src=https://platform.twitter.com/widgets.js></script>
+</aside>
+</div>
+<footer class=footer>
+<div class="container footer__container flex">
+<div class=footer__copyright>
+&copy; 2022 Assault.
+<span class=footer__copyright-credits>このサイトは <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> と <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a> テーマで生成されています。</span>
+</div>
+</div>
+</footer>
+</div>
+<script async defer src=/js/menu.js></script>
+</body>
+</html>
