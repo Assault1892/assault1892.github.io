@@ -3,18 +3,19 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>PAYDAY 2のアンチチートはどのように動くのか？ - /home/assault</title>
+<title>Raspberry Pi - /home/assault</title>
 <script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
-<meta name=description content="PAYDAY 2のアンチチートの仕組みについて">
+<meta name=description content>
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="PAYDAY 2のアンチチートはどのように動くのか？">
-<meta name=twitter:description content="PAYDAY 2のアンチチートの仕組みについて">
+<meta name=twitter:title content="Raspberry Pi">
+<meta name=twitter:description content="なんか色々書いてます 基本的に翻訳多め たまに何かしらのレビューっぽい物を書く">
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=dns-prefetch href=//fonts.googleapis.com>
 <link rel=dns-prefetch href=//fonts.gstatic.com>
 <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 <link rel=stylesheet href=/css/style.css>
 <link rel=stylesheet href=/css/custom.css>
+<link rel=alternate type=application/rss+xml href=/categories/raspberry-pi/index.xml title=/home/assault>
 <link rel="shortcut icon" href=/favicon.ico>
 </head>
 <body class=body>
@@ -45,73 +46,30 @@
 </header>
 <div class="wrapper flex">
 <div class=primary>
-<main class=main role=main>
-<article class=post>
-<header class=post__header>
-<h1 class=post__title>PAYDAY 2のアンチチートはどのように動くのか？</h1>
-<p class=post__lead>元ページ: https://www.unknowncheats.me/forum/payday-2-a/433485-guide-anti-cheat-payday-2-a.htmls</p>
-<div class="post__meta meta">
+<main class="main list" role=main>
+<header class=main__header>
+<h1 class=main__title>Raspberry Pi</h1>
+</header><article class="list__item post">
+<header class=list__header>
+<h2 class="list__title post__title">
+<a href=/posts/raspberry_pi/reboot_when_in_trouble/ rel=bookmark>
+困ったらとりあえず再起動
+</a>
+</h2>
+<p class="list__lead post__lead">「何もしてないのにおかしくなった？じゃあ再起動しろ！なんとかなる！」</p>
+<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-03-18T00:00:00Z>March 18, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/%E7%BF%BB%E8%A8%B3/ rel=category>翻訳</a>, <a class=meta__link href=/categories/payday-2/ rel=category>PAYDAY 2</a>
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-03-22T00:00:00Z>March 22, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/categories/%E9%9B%91%E5%A4%9A/ rel=category>雑多</a>, <a class=meta__link href=/categories/raspberry-pi/ rel=category>Raspberry Pi</a>
 </span>
 </div></div>
-</header><div class="content post__content clearfix">
-<h1 id=payday-2-のアンチチートはどのように動くのか>PAYDAY 2 のアンチチートはどのように動くのか？</h1>
-<p>まず最初に、2 つの違いを知る必要があります:</p>
-<ul>
-<li>Valve Anti-Cheat System (VAC)</li>
-<li>PAYDAY 2 Anti-Cheat</li>
-</ul>
-<h2 id=valve-anti-cheat-system-vac>Valve Anti-Cheat System (VAC)</h2>
-<p><strong>VAC はこのゲームには存在しません。</strong><br>
-つまり、PAYDAY 2 でチートを使っても、PAYDAY 2 や Steam から BAN されることはありません。</p>
-<h2 id=payday-2-anti-cheat>PAYDAY 2 Anti-Cheat</h2>
-<p><strong>どのような仕組みですか？</strong><br>
-チーター検出機能を使用している場合、<strong>CHEATER</strong>タグが表示されます。<br>
-このタグは一時的な物で、<strong>ロビーを抜けるとすぐに消え</strong>、他に影響はありません。<br>
-次回ロビーに参加或いは参加する際に、チーター検出機能に引っ掛かる機能を使用しなければ、このタグは表示されなくなります。</p>
-<h2 id=アンチチートに引っかかってしまいました他のプレイヤーからはどう見えますか>アンチチートに引っかかってしまいました。他のプレイヤーからはどう見えますか？</h2>
-<ul>
-<li>あなたの名前の上に<strong>CHEATER</strong>タグが表示されます。</li>
-<li>HUD 上のあなたの名前が赤色で表示されます。</li>
-<li>参加者にはあなたがどのようなチートを使ったかについての情報が含まれた「SYSTEM」タグのついたメッセージが表示されます。</li>
-</ul>
-<p><img src=https://i.imgur.com/gKwi58z.jpeg alt=CHEATERタグ></p>
-<h2 id=どのような機能が検出されますか>どのような機能が検出されますか？</h2>
-<p>恐らく完全なリストではありませんが&mldr;</p>
-<ul>
-<li>所有していない DLC のコンテンツ（Job、武器、Mask、Color、Perk Deck 等）を使用する。</li>
-<li>所持している装備品よりも多くの装備品を使用する。</li>
-<li>装備している物と違う装備品を展開する。</li>
-<li>所持しているグレネードよりも多くのグレネードを使用する。</li>
-<li>装備しているグレネードと違うグレネードを使用する。</li>
-<li>所有していないレジェンダリースキンを使用する。</li>
-<li>複数のバッグを拾う。</li>
-<li>バッグのドロップを偽装する。(?)</li>
-</ul>
-<p>このように、PAYDAY 2 のアンチチートはしょぼく、2014 年から変わっていないため、まだまだチートツールを使えてしまいます。</p>
-<h2 id=アンチチートを無効化する事はできますか>アンチチートを無効化する事はできますか？</h2>
-<p>あなたがホストであれば可能です。<br>
-<a href=https://www.unknowncheats.me/forum/payday-2-a/115998-beta-anti-anti-cheat-code.html>[β]アンチ - アンチチートコード</a>（このコードがまだ動作するかは分かりません）
-<strong>あなたがクライアントの場合は動作しません。</strong>
-このようなコードが動作するのを見た事がありません。</p>
-<pre><code>デフォルトでロビー作成時に「チートプレイヤーを自動強制退出」が有効化されているため、殆どの場合チートを使用しているとどの公開ロビーにも参加できなくなります。
-HUDによっては、追加のチートを検出したり、チート情報の表示が変化する場合があります。
-</code></pre>
+</header>
+<div class="content list__excerpt post__content clearfix">
+</div>
+<div class="list__footer clearfix">
+<a class="list__footer-readmore btn" href=/posts/raspberry_pi/reboot_when_in_trouble/>続きを読む…</a>
 </div>
 </article>
 </main>
-<div class="authorbox clearfix">
-<figure class=authorbox__avatar>
-<img alt="あさると avatar" src=/img/avatar.png class=avatar height=90 width=90>
-</figure>
-<div class=authorbox__header>
-<span class=authorbox__name>あさるとについて</span>
-</div>
-<div class=authorbox__description>
-PAYDAY2とVRChatを主に遊んでいます / フロントエンドをたまに触る
-</div>
-</div>
 </div>
 <aside class=sidebar>
 <div class="widget-recent widget">
