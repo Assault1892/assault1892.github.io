@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: /home/assault
 ---
 
 # Profile
