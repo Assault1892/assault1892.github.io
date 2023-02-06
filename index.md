@@ -71,6 +71,9 @@ aka. 悪行リスト
 | TETR.IO | [PinBreaker](https://ch.tetr.io/u/pinbreaker) |
 | Twitter | [あさると (@SzlyNe_)](https://twitter.com/SzlyNe_) |
 | VRChat | [あさると](https://vrchat.com/home/user/usr_9dec4a38-a8e0-4b70-bd26-613c5d2ca9cf) 最近はF+にいます いつでもJoinしてね|
+| ブルアカ | ARYRODBZ |
+| プロセカ | 31006435693387784 |
+| 原神 | 思い出したら書きます |
 
 ## PC環境
 
