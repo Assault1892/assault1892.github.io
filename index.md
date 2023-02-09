@@ -61,6 +61,7 @@ aka. 悪行リスト
 | Discord | Assault#1138 |
 | GitHub | [Assault1892](https://github.com/Assault1892) |
 | Misskey.io | [Assault@misskey.io](https://misskey.io/@Assault) |
+| Misskey.art | [Assault@misskey.art](https://misskey.art/@Assault) |
 | Misskeyをしよう | [Assault@mi-wo.site](https://mi-wo.site/@Assault) |
 | にりらみすきー部 | [Assault@misskey.niri.la](https://misskey.niri.la/@Assault) |
 | オオアオ・・・ | [Assault@mi.yude.moe](https://mi.yude.moe/@Assault) |
