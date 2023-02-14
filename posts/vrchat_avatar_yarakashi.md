@@ -45,7 +45,7 @@ VRChatのアバターを改変する際の **「うっかりミス」** や **�
 | OS | Windows 10 22H2 |
 | Unity Version | 2019.4.31f1 |
 | is VCC? | true |
-| is All migrated? | true |
+| is migrated? | true |
 | VRChat SDK Base | 3.1.10 |
 | VRChat SDK Avatars, Worlds | 3.1.10 |
 | ClientSim | 1.2.2|
