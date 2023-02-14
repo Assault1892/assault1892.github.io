@@ -10,7 +10,7 @@ title: "VRChat やらかしリスト"
 ## これはなに
 
 VRChatのアバターを改変する際の **「うっかりミス」** や **「初期仕様がゴミ」** などによる **「やらかし」及び「やらかし因子」** をまとめたページです。  
-本ページを執筆した日 (2023/2/14) の早朝から [めちゃくちゃ謎な問題](https://twitter.com/Junnichi_sato/status/1625071604119269377) に悩まされた挙げ句，最終的な原因は [初期仕様がゴミな事によるControllerの問題](https://twitter.com/Junnichi_sato/status/1625214467079548929) でハゲ上がりそうになったので備忘録も兼ねて。
+本ページを執筆した日 (2023/2/14) の早朝からフレンドの抱える [めちゃくちゃ謎な問題](https://twitter.com/Junnichi_sato/status/1625071604119269377) に [悩まされた](https://twitter.com/SzlyNe_/status/1625163912231657472) 挙げ句，最終的な原因は [初期仕様がゴミな事によるControllerの問題](https://twitter.com/Junnichi_sato/status/1625214467079548929) で [ハゲ上がりそうになった](https://twitter.com/SzlyNe_/status/1625213516578975744) ので備忘録も兼ねて。
 
 私が所有しているアバターやワールド，アセットのみの情報を載せています。  
 「xxというyyでzzの問題が発生する」等の情報があれば [GitHubのIssue](https://github.com/Assault1892/assault1892.github.io/issues) にでも投げてください。  
