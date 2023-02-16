@@ -51,6 +51,10 @@ aka. 悪行リスト
 ### 2023年
 - [PC Status Client Rust](https://github.com/kazukazu123123/pcsc-rs) のREADME.mdを書いた
   - [まだマージされてない](https://github.com/kazukazu123123/pcsc-rs/pull/28) 開発待ち
+- [VRChat やらかし因子リスト](/posts/vrchat_avatar_yarakashi) を書いた
+  - 色々不完全
+- [謎技術フルトラ方法](/posts/how_to_cheap_fbt) を書いた
+  - ゴミだからやらない方がいい
 
 ---
 
@@ -86,6 +90,7 @@ aka. 悪行リスト
 | GPU | NVIDIA GeForce RTX 2060 Mobile (実質GTX1070 6GB)|
 | Storage | ADATA SX6000PNP 512GB |
 | Network | Intel Killer AX1650x 200NGW |
+| AP (Router) | ATERM BL902HW (だいぶゴミ 11acって何) |
 | | |
 | Mouse | Logicool G203 1600DPI |
 | Earphone | GK GS10, CCZ Emerald |
