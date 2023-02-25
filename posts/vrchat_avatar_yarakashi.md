@@ -116,6 +116,18 @@ Base (Locomotion) のAnimator Controller内にある `JumpAndFall` ステート�
 
 - Write Defaultsを使用している。将来的に問題が発生する可能性があるが，急を要するわけではない。
 
+## [まめひなたちゃん ver1.30](https://mukumi.booth.pm/items/4340548)
+
+見てねえ。そのうち見る。
+
+## [舞夜ちゃん ver1.02.2](https://kyubihome.booth.pm/items/3390957)
+
+- FXのAnimator Controller内All PartsレイヤーにAvatar Maskがセットされている。
+  - 不具合の元になりかねない。Avatar Maskを全て外す事で解決する。
+
+- UTS2を使用している。
+  - UTS2 2.0.9を使用している場合は問題無いと思うが，気になるならlilToonへの移行を。
+
 ## [メリノちゃん ver 1.02](https://ponderogen.booth.pm/items/2351859)
 
 - **Dynamic Boneを使用している** 。
