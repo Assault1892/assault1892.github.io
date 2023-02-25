@@ -128,6 +128,8 @@ Base (Locomotion) のAnimator Controller内にある `JumpAndFall` ステート�
 - UTS2を使用している。
   - UTS2 2.0.9を使用している場合は問題無いと思うが，気になるならlilToonへの移行を。
 
+- Write Defaultsを使用している。将来的に問題が発生する可能性があるが，急を要するわけではない。
+
 ## [メリノちゃん ver 1.02](https://ponderogen.booth.pm/items/2351859)
 
 - **Dynamic Boneを使用している** 。
