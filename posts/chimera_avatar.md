@@ -148,6 +148,8 @@ Inspector からチェックを外した後，Tag を EditorOnly にしてくだ
 
 これで完了です。
 
+![](../assets/img/chimera/25.png)
+
 以下 lilToon 1.4.0 [固有の不具合](https://github.com/lilxyzw/lilToon/issues/92)への対応策です。修正されたら消します。
 
 **lilToon 1.3.7 を使用してください。**VCC を使用していて，VPM に lilxyzw 氏の Repo を登録している場合は楽にダウングレードできます。  
