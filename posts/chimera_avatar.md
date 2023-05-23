@@ -141,7 +141,9 @@ Inspector からチェックを外した後，Tag を EditorOnly にしてくだ
 
 ![](../_site/assets/img/chimera/22.png)
 
-これで完了です。  
+これで完了です。
+
+以下 lilToon 1.4.0 [固有の不具合](https://github.com/lilxyzw/lilToon/issues/92)への対応策です。修正されたら消します。  
 もし「AutoAnchorObject」がアバターの外に出ている場合は手動でアバターのルートに移動した後，全メッシュを選択して「Anchor Override」を先程入れた「AutoAnchorObject」に変更してください。
 
 ### FX レイヤーの修正
