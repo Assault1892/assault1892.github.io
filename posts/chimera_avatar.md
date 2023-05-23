@@ -118,6 +118,11 @@ Inspector からチェックを外した後，Tag を EditorOnly にしてくだ
 
 ![](../assets/img/chimera/11.png)
 
+次に Root Bone を変更します。  
+移植した頭側アバターのメッシュ全てを選択し，Inspector ちょっと下にある「Root Bone」を素体アバターの Root Bone (多くの場合 Hips)に変更してください。
+
+![](../assets/img/chimera/23.png)
+
 最後に尻尾や各種ボーンを移植します。  
 頭側 Armature 以下のオブジェクト全てに何らかの方法で固有の名称を付け，**素体側 Armature と入れ子構造にしてください** (通常の着せ替えと同様の手順です) 。
 
@@ -136,7 +141,8 @@ Inspector からチェックを外した後，Tag を EditorOnly にしてくだ
 
 ![](../_site/assets/img/chimera/22.png)
 
-これで完了です。
+これで完了です。  
+もし「AutoAnchorObject」がアバターの外に出ている場合は手動でアバターのルートに移動した後，全メッシュを選択して「Anchor Override」を先程入れた「AutoAnchorObject」に変更してください。
 
 ### FX レイヤーの修正
 
