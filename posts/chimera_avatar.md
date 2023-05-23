@@ -135,16 +135,23 @@ Inspector からチェックを外した後，Tag を EditorOnly にしてくだ
 現在，**アバターの頭と素体で明るさに差異が出る状態になっています。**  
 この問題を修正するために lilToon の明るさ修正機能を使用します。
 
-![](../_site/assets/img/chimera/21.png)
+![](../assets/img/chimera/21.png)
 
 アバターを右クリックし，「lilToon > [GameObject] Fix lighting」をクリックしてください。
 
-![](../_site/assets/img/chimera/22.png)
+![](../assets/img/chimera/22.png)
+
+もしバウンダリが異様に大きな値 (1.25 を超えるなど) になった場合は [BoundsUnificator](https://esa-pages.io/p/sharing/15655/posts/40/5e66e9c4374afa5aba15.html) などを用いて，**Anchor Override や Root Bone は変更せず，Bounds だけを**適切と思われる値に変更してください。  
+私は 桔梗 + カリンの場合，カリンちゃんに合わせて Center は全て 0，Extent を全て `0.8427192` に設定しています。
+
+![](../assets/img/chimera/24.png)
 
 これで完了です。
 
-以下 lilToon 1.4.0 [固有の不具合](https://github.com/lilxyzw/lilToon/issues/92)への対応策です。修正されたら消します。  
-もし「AutoAnchorObject」がアバターの外に出ている場合は手動でアバターのルートに移動した後，全メッシュを選択して「Anchor Override」を先程入れた「AutoAnchorObject」に変更してください。
+以下 lilToon 1.4.0 [固有の不具合](https://github.com/lilxyzw/lilToon/issues/92)への対応策です。修正されたら消します。
+
+**lilToon 1.3.7 を使用してください。**VCC を使用していて，VPM に lilxyzw 氏の Repo を登録している場合は楽にダウングレードできます。  
+もし Unitypackage から導入している場合は気合でがんばってください...。
 
 ### FX レイヤーの修正
 
