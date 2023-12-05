@@ -74,7 +74,7 @@ aka. 悪行リスト
 | :---------------------------- | :---------------------------------------------------------------------------------------- |
 | Steam ウィッシュリスト        | [あのウィッシュリスト](https://store.steampowered.com/wishlist/id/assault1892/)           |
 | VRChat 持ってるアセットリスト | [アセットまとめ.md](https://gist.github.com/Assault1892/2d6f48d9d89e71c8ee665bcd94973eed) |
-| VRChat 欲しいものリスト       | あとでつくる！                                                                            |
+| VRChat 欲しいものリスト       | https://ginjake.net/homeid=1025793333447221248                                            |
 
 ## アカウント
 
