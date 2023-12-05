@@ -64,8 +64,16 @@ aka. 悪行リスト
   - ゴミだからやらない方がいい
 - [キメラアバター作成方法](/posts/chimera_avatar.md) を書いた
   - 多分この手法で問題ないはず
+- [Discord Twitter Link Replacer](https://github.com/Assault1892/discord-replace-twitter-link) を作った
 
 ---
+
+## リンク類 (ちょいちょい追記していく)
+
+| Name                          | Description                                                                               |
+| :---------------------------- | :---------------------------------------------------------------------------------------- |
+| VRChat 持ってるアセットリスト | [アセットまとめ.md](https://gist.github.com/Assault1892/2d6f48d9d89e71c8ee665bcd94973eed) |
+| VRChat 欲しいものリスト       | あとでつくる！                                                                            |
 
 ## アカウント
 
@@ -87,19 +95,20 @@ aka. 悪行リスト
 
 ## PC 環境
 
-| Name        | Description                                                      |
-| :---------- | :--------------------------------------------------------------- |
-| Rig         | Mouse G-Tune E5-D-MTS                                            |
-| OS          | Windows 10 Home x64 19045.2486                                   |
-| CPU         | AMD Ryzen 5 3500                                                 |
-| RAM         | SODIMM 2667Mhz 16GB                                              |
-| GPU         | NVIDIA GeForce RTX 2060 Mobile                                   |
-| Storage     | ADATA SX6000PNP 512GB                                            |
-| Network     | Intel Killer AX1650x 200NGW                                      |
-| AP (Router) | ATERM BL902HW (だいぶゴミ 11ac って何)                           |
-|             |                                                                  |
-| Mouse       | Logicool G203 1600DPI                                            |
-| Earphone    | GK GS10, CCZ Emerald                                             |
-|             |                                                                  |
-| VR Device   | Oculus Quest 2 128GB                                             |
-| Link Cable  | [KIWI Design の 3m の奴](https://www.amazon.co.jp/dp/B09N78NKVG) |
+| Name            | Description                                                      |
+| :-------------- | :--------------------------------------------------------------- |
+| Rig             | Mouse G-Tune E5-D-MTS                                            |
+| OS              | Windows 10 Home x64 19045.2486                                   |
+| CPU             | AMD Ryzen 5 3500                                                 |
+| RAM             | SODIMM 2667Mhz 16GB                                              |
+| GPU             | NVIDIA GeForce RTX 2060 Mobile                                   |
+| Storage (OS)    | ADATA SX6000PNP 512GB                                            |
+| Storage (Games) | Crucial MX500 CT500MX500SSD1 512GB                               |
+| Network         | Intel Killer AX1650x 200NGW                                      |
+| AP (Router)     | ATERM BL902HW (だいぶゴミ 11ac って何)                           |
+|                 |                                                                  |
+| Mouse           | Logicool G203 1600DPI                                            |
+| Earphone        | GK GS10, CCZ Emerald                                             |
+|                 |                                                                  |
+| VR Device       | Oculus Quest 2 128GB                                             |
+| Link Cable      | [KIWI Design の 3m の奴](https://www.amazon.co.jp/dp/B09N78NKVG) |
