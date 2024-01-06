@@ -69,3 +69,7 @@ title: "Twitter Link Replacer - プライバシーポリシー"
 ## 第 9 条 (お問い合わせ)
 
 本プライバシーポリシーに関するお問い合わせは、[github/Assault1892](https://github.com/Assault1892)までお願いいたします。
+
+## 第 10 条 (このプライバシーポリシーについて)
+
+本規約は[Web サイトの利用規約](https://kiyaku.jp/index.html)様が提供する「[プライバシーポリシーのひな形](https://kiyaku.jp/hinagata/privacy.html)」を使用して作成されています。
