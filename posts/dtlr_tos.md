@@ -4,7 +4,7 @@ title: "Twitter Link Replacer - 利用規約"
 
 # Twitter Link Replacer - 利用規約
 
-この利用規約 (以降、**本規約**) は [Assault1892](https://github.com/Assault1892) (以降、**当グループ**) が Discord 社の [Discord](https://discord.com/) 上で提供するサービスである「**Twitter Link Replacer**」 (以降、**本サービス**) の利用条件を定めるものです。  
+この利用規約 (以降、**本規約**) は [github/Assault1892](https://github.com/Assault1892) (以降、**当グループ**) が Discord 社の [Discord](https://discord.com/) 上で提供するサービスである「**Twitter Link Replacer**」 (以降、**本サービス**) の利用条件を定めるものです。  
 登録ユーザーのみなさま (以降、**ユーザー**) には、本規約に従って、本サービスをご利用いただきます。
 
 ## 第 0 条 (要約)
