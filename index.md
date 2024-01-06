@@ -17,7 +17,7 @@ VRChat コンパニオンツール [VRCX](https://github.com/vrcx-team/VRCX) の
 PC ゲームのリアルタイムでの改造に興味があり、現在は Cheat Engine で満足している  
 そのうち任意の言語で他のプロセスのメモリを読み書きしたり出来るようなツール (俗に言うチートツール) を開発してみたいが、いつになることやら
 
-ゲームは専ら [VRChat](https://store.steampowered.com/app/438100) か [TETR.IO](https://tetr.io) 、 [BLUE PROTOCOL](https://blue-protocol.com/) しか遊んでいません  
+ゲームは専ら [VRChat](https://store.steampowered.com/app/438100) か [Grand Theft Auto Online](https://store.steampowered.com/app/271590) しか遊んでいません  
 対人ゲームが苦手な代わりに協力ゲームがとても好きです
 
 たまに音声のみ音 MAD を作ります　映像技術が欲しい
@@ -34,6 +34,7 @@ aka. 悪行リスト
 
 ### 2021 年
 
+- N 高等学校に 6 期生として入学した
 - 個人用にいくつかの Discord Bot を開発した  
   使用言語は Node.js と Python
 
@@ -66,6 +67,10 @@ aka. 悪行リスト
   - 多分この手法で問題ないはず
 - [Discord Twitter Link Replacer](https://github.com/Assault1892/discord-replace-twitter-link) を作った
 
+## 2024 年
+
+ナス
+
 ---
 
 ## リンク類 (ちょいちょい追記していく)
@@ -78,33 +83,34 @@ aka. 悪行リスト
 
 ## アカウント
 
-| サービス名      | ID                                                                                                                       |
-| :-------------- | :----------------------------------------------------------------------------------------------------------------------- |
-| Discord         | Assault#1138                                                                                                             |
-| GitHub          | [Assault1892](https://github.com/Assault1892)                                                                            |
-| Misskey.io      | [Assault@misskey.io](https://misskey.io/@Assault)                                                                        |
-| Nintendo Switch | SW-3107-8528-0121 オンラインが欲しい                                                                                     |
-| note            | [あさると](https://note.com/assault_) ゴミ記事ばっか上げてます                                                           |
-| Steam           | [あさると](https://steamcommunity.com/profiles/76561197985049658) ころころ ID 変えます アイコンで覚えて                  |
-| Qiita           | [@Assault](https://qiita.com/Assault)                                                                                    |
-| TETR.IO         | [PinBreaker](https://ch.tetr.io/u/pinbreaker)                                                                            |
-| Twitter         | [あさると (@SzlyNe\_)](https://twitter.com/SzlyNe_)                                                                      |
-| VRChat          | [あさると](https://vrchat.com/home/user/usr_9dec4a38-a8e0-4b70-bd26-613c5d2ca9cf) 最近は F+にいます いつでも Join してね |
-| ブルアカ        | ARYRODBZ                                                                                                                 |
-| ブルプロ        | DHDUKR9D                                                                                                                 |
-| プロセカ        | 31006435693387784                                                                                                        |
+| サービス名                | ID                                                                                                                       |
+| :------------------------ | :----------------------------------------------------------------------------------------------------------------------- |
+| Discord                   | assault1892                                                                                                              |
+| GitHub                    | [Assault1892](https://github.com/Assault1892)                                                                            |
+| Misskey.io                | [Assault@misskey.io](https://misskey.io/@Assault)                                                                        |
+| tty7 Misskey (最近はここ) | [Assault@m.tty7.uk](https://m.tty7.uk/@Assault)                                                                          |
+| Nintendo Switch           | SW-3107-8528-0121 オンラインが欲しい                                                                                     |
+| note                      | [あさると](https://note.com/assault_) ゴミ記事ばっか上げてます                                                           |
+| Steam                     | [Assault1892]](https://steamcommunity.com/profiles/76561197985049658) ころころ ID 変えます アイコンで覚えて              |
+| Qiita                     | [@Assault](https://qiita.com/Assault)                                                                                    |
+| TETR.IO                   | [PinBreaker](https://ch.tetr.io/u/pinbreaker)                                                                            |
+| Twitter                   | [あさると (@SzlyNe\_)](https://twitter.com/SzlyNe_)                                                                      |
+| VRChat                    | [あさると](https://vrchat.com/home/user/usr_9dec4a38-a8e0-4b70-bd26-613c5d2ca9cf) 最近は F+にいます いつでも Join してね |
+| ブルアカ                  | ARYRODBZ                                                                                                                 |
+| ブルプロ                  | DHDUKR9D                                                                                                                 |
+| プロセカ                  | 31006435693387784                                                                                                        |
 
 ## PC 環境
 
 | Name            | Description                                                      |
 | :-------------- | :--------------------------------------------------------------- |
 | Rig             | Mouse G-Tune E5-D-MTS                                            |
-| OS              | Windows 10 Home x64 19045.2486                                   |
+| OS              | Windows 10 Home x64 19045.3803                                   |
 | CPU             | AMD Ryzen 5 3500                                                 |
 | RAM             | SODIMM 2667Mhz 16GB                                              |
 | GPU             | NVIDIA GeForce RTX 2060 Mobile                                   |
 | Storage (OS)    | ADATA SX6000PNP 512GB                                            |
-| Storage (Games) | Crucial MX500 CT500MX500SSD1 512GB                               |
+| Storage (Games) | Crucial MX500 CT1000MX500SSD1 1TB                                |
 | Network         | Intel Killer AX1650x 200NGW                                      |
 | AP (Router)     | ATERM BL902HW (だいぶゴミ 11ac って何)                           |
 |                 |                                                                  |
@@ -112,4 +118,5 @@ aka. 悪行リスト
 | Earphone        | GK GS10, CCZ Emerald                                             |
 |                 |                                                                  |
 | VR Device       | Oculus Quest 2 128GB                                             |
+| FBT             | HaritoraX 1.1                                                    |
 | Link Cable      | [KIWI Design の 3m の奴](https://www.amazon.co.jp/dp/B09N78NKVG) |
