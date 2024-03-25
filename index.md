@@ -69,7 +69,7 @@ aka. 悪行リスト
 
 ## 2024 年
 
-ナス
+- [assault1892.boats](https://assault1892.boats)を取った 何に使おう
 
 ---
 
