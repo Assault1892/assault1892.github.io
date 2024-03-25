@@ -91,7 +91,7 @@ aka. 悪行リスト
 | tty7 Misskey (最近はここ) | [Assault@m.tty7.uk](https://m.tty7.uk/@Assault)                                                                          |
 | Nintendo Switch           | SW-3107-8528-0121 オンラインが欲しい                                                                                     |
 | note                      | [あさると](https://note.com/assault_) ゴミ記事ばっか上げてます                                                           |
-| Steam                     | [Assault1892]](https://steamcommunity.com/profiles/76561197985049658) ころころ ID 変えます アイコンで覚えて              |
+| Steam                     | [Assault1892](https://steamcommunity.com/profiles/76561197985049658) ころころ ID 変えます アイコンで覚えて              |
 | Qiita                     | [@Assault](https://qiita.com/Assault)                                                                                    |
 | TETR.IO                   | [PinBreaker](https://ch.tetr.io/u/pinbreaker)                                                                            |
 | Twitter                   | [あさると (@SzlyNe\_)](https://twitter.com/SzlyNe_)                                                                      |
