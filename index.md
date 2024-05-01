@@ -17,7 +17,7 @@ VRChat コンパニオンツール [VRCX](https://github.com/vrcx-team/VRCX) の
 PC ゲームのリアルタイムでの改造に興味があり、現在は Cheat Engine で満足している  
 そのうち任意の言語で他のプロセスのメモリを読み書きしたり出来るようなツール (俗に言うチートツール) を開発してみたいが、いつになることやら
 
-ゲームは専ら [VRChat](https://store.steampowered.com/app/438100) か [Grand Theft Auto Online](https://store.steampowered.com/app/271590) しか遊んでいません  
+ゲームは専ら [VRChat](https://store.steampowered.com/app/438100) か [Escape from Tarkov](https://www.escapefromtarkov.com/) しか遊んでいません  
 対人ゲームが苦手な代わりに協力ゲームがとても好きです
 
 たまに音声のみ音 MAD を作ります　映像技術が欲しい
@@ -72,6 +72,8 @@ aka. 悪行リスト
 - [assault1892.boats](https://assault1892.boats)を取った 何に使おう
 - N 高等学校 無事卒業
   - 専門学校へ進学
+- Escape from Tarkov The Unheard Editionをリリース直後にEoDからアップグレードした
+  - 買った直後大炎上 + EoDアップグレード半額来て顔なくなった　半額返せ
 
 ---
 
@@ -107,7 +109,7 @@ aka. 悪行リスト
 | Name            | Description                                                      |
 | :-------------- | :--------------------------------------------------------------- |
 | Rig             | Mouse G-Tune E5-D-MTS                                            |
-| OS              | Windows 10 Home x64 19045.3803                                   |
+| OS              | Windows 10 Home x64 19045.4291                                   |
 | CPU             | AMD Ryzen 5 3500                                                 |
 | RAM             | SODIMM 2667Mhz 16GB                                              |
 | GPU             | NVIDIA GeForce RTX 2060 Mobile                                   |
@@ -117,7 +119,7 @@ aka. 悪行リスト
 | AP (Router)     | ATERM BL902HW (だいぶゴミ 11ac って何)                           |
 |                 |                                                                  |
 | Mouse           | Logicool G203 1600DPI                                            |
-| Earphone        | GK GS10, CCZ Emerald                                             |
+| Earphone        | Truthear Hola, GK GS10                                           |
 |                 |                                                                  |
 | VR Device       | Oculus Quest 2 128GB                                             |
 | FBT             | HaritoraX 1.1                                                    |
