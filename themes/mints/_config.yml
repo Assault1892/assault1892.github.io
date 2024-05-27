@@ -17,12 +17,12 @@ posts_overview:
 
 # Links to your social media.
 social_links:
-  email:
-  github:
-  linkedin:
-  twitter:
-  instagram:
-  youtube:
+  # email:
+  github: https://github.com/Assault1892
+  # linkedin:
+  twitter: https://twitter.com/SzlyNe_
+  # instagram:
+  # youtube:
 
 # Site Create Time
 since:
