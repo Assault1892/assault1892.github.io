@@ -155,6 +155,20 @@ Ctrl+H で `path: Body` を `path: Karin/Body` に書き換え。`Karin`は頭�
 
 これをセットしているアニメーションの分だけ繰り返す。ここが一番めんどくさい。
 
+## Viseme, Eye Movement を修正
+
+Avatar Descriptor の真ん中ぐらいにある `LipSync` の `Face Mesh` を頭アバターの顔メッシュ (`Body`) に差し替えたあと、  
+`vrc.v_` から始まる Viseme シェイプキー を手動で選択。
+
+![](Unity_q4ihg8uPfb.png)
+
+`LipSync` からちょっと下にある `Eye Look` の折りたたみの中にある `Eyelids` の `Eyelids Mesh` を LipSync 同様頭アバターの顔メッシュに差し替え、  
+`Blink` (まばたき), `Looking Up` (上を見る), `Looking Down` (下を見る) に対応したシェイプキーを手動で選択。
+
+![](Unity_IdKq2UbAXt.png)
+
+少し上にある `Left, Right Eye Bone` も頭アバターのものに差し替える。
+
 ## Gesture Manager でテスト
 
 上ツールバーから `Tools` → `Gesture Manager Emulator` をクリックし、ヒエラルキーに出てきた `GestureManager` を選択。  
