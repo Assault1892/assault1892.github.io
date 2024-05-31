@@ -65,8 +65,8 @@ aka. 愚行リスト
 
 - [assault1892.boats](https://assault1892.boats)を取った 何に使おう
 - N 高等学校 無事卒業
-- IT系専門学校へ進学
-- GitHub PagesをJekyllからHexoに移行した
+- IT 系専門学校へ進学
+- GitHub Pages を Jekyll から Hexo に移行した
   - これで何回目の移行だろうか...
 
 ---
@@ -89,7 +89,7 @@ aka. 愚行リスト
 | tty7 Misskey (最近はここ) | [Assault@m.tty7.uk](https://m.tty7.uk/@Assault)                                                                          |
 | Nintendo Switch           | SW-3107-8528-0121 オンラインが欲しい                                                                                     |
 | note                      | [あさると](https://note.com/assault_) ゴミ記事ばっか上げてます                                                           |
-| Steam                     | [Assault1892](https://steamcommunity.com/profiles/76561197985049658) ころころ ID 変えます アイコンで覚えて              |
+| Steam                     | [Assault1892](https://steamcommunity.com/profiles/76561197985049658) ころころ ID 変えます アイコンで覚えて               |
 | Qiita                     | [@Assault](https://qiita.com/Assault)                                                                                    |
 | TETR.IO                   | [PinBreaker](https://ch.tetr.io/u/pinbreaker)                                                                            |
 | Twitter                   | [あさると (@SzlyNe\_)](https://twitter.com/SzlyNe_)                                                                      |
@@ -100,21 +100,21 @@ aka. 愚行リスト
 
 ## PC 環境
 
-| Name            | Description                                                      |
-| :-------------- | :--------------------------------------------------------------- |
-| Rig             | Mouse G-Tune E5-D-MTS                                            |
-| OS              | Windows 10 Home x64 19045.4291                                   |
-| CPU             | AMD Ryzen 5 3500                                                 |
-| RAM             | SODIMM 2667Mhz 16GB                                              |
-| GPU             | NVIDIA GeForce RTX 2060 Mobile                                   |
-| Storage (OS)    | ADATA SX6000PNP 512GB                                            |
-| Storage (Games) | Crucial MX500 CT1000MX500SSD1 1TB                                |
-| Network         | Intel Killer AX1650x 200NGW                                      |
-| AP (Router)     | ATERM BL902HW (だいぶゴミ 11ac って何)                           |
-|                 |                                                                  |
-| Mouse           | Logicool G203 1600DPI                                            |
-| Earphone        | Truthear Hola, GK GS10                                           |
-|                 |                                                                  |
-| VR Device       | Oculus Quest 2 128GB                                             |
-| FBT             | HaritoraX 1.1                                                    |
-| Link Cable      | [無限Linkケーブル](https://booth.pm/ja/items/4867830) |
+| Name            | Description                                             |
+| :-------------- | :------------------------------------------------------ |
+| Rig             | Mouse G-Tune E5-D-MTS                                   |
+| OS              | Windows 10 Home x64 19045.4291                          |
+| CPU             | AMD Ryzen 5 3500                                        |
+| RAM             | SODIMM 2667Mhz 16GB                                     |
+| GPU             | NVIDIA GeForce RTX 2060 Mobile                          |
+| Storage (OS)    | ADATA SX6000PNP 512GB                                   |
+| Storage (Games) | Crucial MX500 CT1000MX500SSD1 1TB                       |
+| Network         | Intel Killer AX1650x 200NGW                             |
+| AP (Router)     | ATERM BL902HW (だいぶゴミ 11ac って何)                  |
+|                 |                                                         |
+| Mouse           | Logicool G203 1600DPI                                   |
+| Earphone        | Truthear Hola, GK GS10                                  |
+|                 |                                                         |
+| VR Device       | Oculus Quest 2 128GB                                    |
+| FBT             | HaritoraX 1.1                                           |
+| Link Cable      | [無限 Link ケーブル](https://booth.pm/ja/items/4867830) |
