@@ -34,7 +34,6 @@ aka. 愚行リスト
 
 ### 2021 年
 
-- N 高等学校に 6 期生として入学した
 - 個人用にいくつかの Discord Bot を開発した  
   使用言語は Node.js と Python
 
@@ -64,8 +63,6 @@ aka. 愚行リスト
 ### 2024 年
 
 - [assault1892.boats](https://assault1892.boats)を取った 何に使おう
-- N 高等学校 無事卒業
-- IT 系専門学校へ進学
 - GitHub Pages を Jekyll から Hexo に移行した
   - これで何回目の移行だろうか...
 
