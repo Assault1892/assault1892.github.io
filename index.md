@@ -34,7 +34,6 @@ aka. 悪行リスト
 
 ### 2021 年
 
-- N 高等学校に 6 期生として入学した
 - 個人用にいくつかの Discord Bot を開発した  
   使用言語は Node.js と Python
 
@@ -70,8 +69,6 @@ aka. 悪行リスト
 ## 2024 年
 
 - [assault1892.boats](https://assault1892.boats)を取った 何に使おう
-- N 高等学校 無事卒業
-  - 専門学校へ進学
 - Escape from Tarkov The Unheard Editionをリリース直後にEoDからアップグレードした
   - 買った直後大炎上 + EoDアップグレード半額来て顔なくなった　半額返せ
 
