@@ -5,40 +5,31 @@ permalink: /about/
 hide: true
 ---
 
-名前: あさると (柊野 紗記)  
-年齢: rand(1..100)  
-性別: ["男", "女", "中"].sample  
-誕生日: 12/6
+# About me
 
-VRChat ともふもふの猫が好きです  
-理系でも文系でもない、「広く浅く」を突き進む中途半端オタク  
-VRChat コンパニオンツール [VRCX](https://github.com/vrcx-team/VRCX) の日本語翻訳を書いたりしています
+- 名前: **あさると** (Assault, Assault1892, 柊野 紗記)  
+- 年齢: **このページの作成日から逆算**しよう！
+- 誕生日: 12月6日
 
-プログラミングはあまり得意ではありません がちょっとぐらいならできます  
-PC ゲームのリアルタイムでの改造に興味があり、現在は Cheat Engine で満足している  
-そのうち任意の言語で他のプロセスのメモリを読み書きしたり出来るようなツール (俗に言うチートツール) を開発してみたいが、いつになることやら
+多少のプログラミングとゲームができます。  
+最近は[VRChat](https://vrchat.com/)と[War Thunder](https://warthunder.dmm.com/)と[Escape from Tarkov](https://www.escapefromtarkov.com/)をあそんでいます。
+[VRCX](https://github.com/vrcx-team/VRCX)の日本語翻訳をしていました。最近はお休み気味！
 
-ゲームは専ら [VRChat](https://store.steampowered.com/app/438100) か [Escape from Tarkov](https://www.escapefromtarkov.com/) しか遊んでいません  
-対人ゲームが苦手な代わりに協力ゲームがとても好きです
+いろいろなことに興味関心があります。気になったことは気が済むまで調べる派。    
+最近は機械学習による画像認識に興味があります。PyTorchとたたかうぞ！
 
-たまに音声のみ音 MAD を作ります　映像技術が欲しい
+# 経歴
 
----
-
-## 経歴
-
-aka. 愚行リスト
-
-### 2020 年
+## 2020 年
 
 - [AutoMute Us](https://github.com/automuteus/automuteus) を日本語化した
 
-### 2021 年
+## 2021 年
 
 - 個人用にいくつかの Discord Bot を開発した  
   使用言語は Node.js と Python
 
-### 2022 年
+## 2022 年
 
 - 当時所属していたグループ向けに Discord Bot を開発した  
   使用言語は確か Python (リポジトリ爆破したから忘れた...)
@@ -54,65 +45,107 @@ aka. 愚行リスト
   - [後に自分も吐いた](https://twitter.com/SzlyNe_/status/1613301443175546880)
   - その後 [おみやげをもらった](https://twitter.com/pepepper_cpp/status/1621775350178152451)
 
-### 2023 年
+## 2023 年
 
-- [Misskey.art](https://misskey.art)の管理者やった
+- [Misskey.art](https://misskey.art) の管理者やった
   - [後に辞めた](https://misskey.art/notes/9gxcrx9kgp)
 - [PC Status Client Rust](https://github.com/kazukazu123123/pcsc-rs) の README.md を書いた
+- [VRCX](https://github.com/vrcx-team/VRCX) を日本語化した
 - [Discord Twitter Link Replacer](https://github.com/Assault1892/discord-replace-twitter-link) を作った
 
-### 2024 年
+## 2024 年
 
-- [assault1892.boats](https://assault1892.boats)を取った 何に使おう
+- [assault1892.boats](https://assault1892.boats) を取った 何に使おう
 - GitHub Pages を Jekyll から Hexo に移行した
   - これで何回目の移行だろうか...
 
----
+## 2025 年
 
-## リンク類 (ちょいちょい追記していく)
+- [Easy Anti Cheat Splash Swapper](https://github.com/Assault1892/EACSS)を作った
 
-| Name                          | Description                                                                               |
-| :---------------------------- | :---------------------------------------------------------------------------------------- |
-| Steam ウィッシュリスト        | [あのウィッシュリスト](https://store.steampowered.com/wishlist/id/assault1892/)           |
-| VRChat 持ってるアセットリスト | [アセットまとめ.md](https://gist.github.com/Assault1892/2d6f48d9d89e71c8ee665bcd94973eed) |
-| VRChat 欲しいものリスト       | [aka. スキリスト](https://booth.pm/wish_list_names/K0vTm5V8)                              |
+# できること
 
-## アカウント
+## プログラミング
+
+- Python
+  - 小規模なデスクトップアプリケーション開発、Discord Bot開発、Djangoを使ったWebアプリケーション開発が可能
+    - [Easy Anti Cheat Splash Swapper](https://github.com/Assault1892/EACSS)
+    - [Splatoon2 Stage Bot](https://github.com/Assault1892/splatoon2-stage-post-bot) (Archived)
+- Node.js
+  - Electronを使用したデスクトップアプリケーション開発、Discord Bot開発が可能
+    - [Discord Twitter Link Replacer](https://github.com/Assault1892/discord-replace-twitter-link) (Archived)
+- TypeScript
+  - お勉強中！環境構築してHello Worldするぐらいまではなんとか。
+- Java
+  - 小規模なデスクトップアプリケーション開発、Tomcatを使ったWebアプリケーション開発が可能
+- C#
+  - お勉強中！とりあえずVisual Studio上でコード書いてビルドするぐらいまではできた。
+- Windows バッチファイル
+  - ちょっと書けるかな程度。メインで書けるほどではない。
+
+### ライブラリとか
+
+- Tomcat
+  - Serlvet, JSP開発・連携 (Forward, Includeなど) 、H2DB連携が可能
+- Django
+  - SQLite DBと連携をする小規模なブログシステムの開発経験あり
+- Tailwind CSS
+  - 大昔使ってた。使い方ぐらいならわかる。
+
+## クリエイター系
+
+Adobe系ソフトは高校在籍期間のみ。今は使えず。。。
+
+- 画像
+  - Adobe Photoshop, Adobe Lightroom, **GIMP**, **Darktable**の使用経験あり
+    - 普段から画像のレタッチやPSD編集用途で使用。
+- 動画
+  - Adobe Premiere Pro, **Aviutl**, **YukkuriMovieMaker4**の使用経験あり
+    - 最近はずっとYMM4多用。Premiere Proに戻りたい...
+- 音声
+  - **REAPER**, **VocalShifter**の使用経験あり
+    - 音楽のアレンジ作ったり耳コピしたり音MAD作ったり。
+- Unity (2019, 2022)
+  - VRChat向けアバター/ワールドの作成・アップロード経験、スタンドアロンのVRアプリケーション開発経験あり
+  - Unity C#の経験も多少あり
+
+# 連絡先
+
+上から連絡がとりやすい順。  
+基本的に何者か分かる形のプロフィールでない場合、フレンドリクエストやDM等送られても全て蹴ります。
+- Discord: `assault1892`
+- VRChat: [あさると](https://vrchat.com/home/user/usr_9dec4a38-a8e0-4b70-bd26-613c5d2ca9cf)
+- Twitter: [あさると (@SzlyNe\_)](https://twitter.com/SzlyNe_)
+  - **DMほとんど見てません！** 恨むならスパムアカウント運営者<small>とイーロン</small>を恨んでください
+    リプライとかならみています。
+
+## その他のアカウント
 
 | サービス名                | ID                                                                                                                       |
 | :------------------------ | :----------------------------------------------------------------------------------------------------------------------- |
-| Discord                   | assault1892                                                                                                              |
 | GitHub                    | [Assault1892](https://github.com/Assault1892)                                                                            |
-| Misskey.io                | [Assault@misskey.io](https://misskey.io/@Assault)                                                                        |
-| tty7 Misskey (最近はここ) | [Assault@m.tty7.uk](https://m.tty7.uk/@Assault)                                                                          |
-| Nintendo Switch           | SW-3107-8528-0121 オンラインが欲しい                                                                                     |
-| note                      | [あさると](https://note.com/assault_) ゴミ記事ばっか上げてます                                                           |
-| Steam                     | [Assault1892](https://steamcommunity.com/profiles/76561197985049658) ころころ ID 変えます アイコンで覚えて               |
+| Nintendo Switch           | SW-3107-8528-0121 オンラインが欲しい                                                                                        |
+| note                      | [あさると](https://note.com/assault_) Virtual Desktop関係の記事を主に                                                        |
+| Steam                     | [Assault](https://steamcommunity.com/profiles/76561197985049658)                                                         |
 | Qiita                     | [@Assault](https://qiita.com/Assault)                                                                                    |
-| TETR.IO                   | [PinBreaker](https://ch.tetr.io/u/pinbreaker)                                                                            |
-| Twitter                   | [あさると (@SzlyNe\_)](https://twitter.com/SzlyNe_)                                                                      |
-| VRChat                    | [あさると](https://vrchat.com/home/user/usr_9dec4a38-a8e0-4b70-bd26-613c5d2ca9cf) 最近は F+にいます いつでも Join してね |
-| ブルアカ                  | ARYRODBZ                                                                                                                 |
-| ブルプロ                  | DHDUKR9D                                                                                                                 |
-| プロセカ                  | 31006435693387784                                                                                                        |
 
-## PC 環境
+# PC 環境
 
 | Name            | Description                                             |
 | :-------------- | :------------------------------------------------------ |
-| Rig             | Mouse G-Tune E5-D-MTS                                   |
-| OS              | Windows 10 Home x64 19045.4291                          |
+| Rig             | MouseComputer G-Tune E5-D-MTS                           |
+| OS              | Windows 11 Home x64 26100.3476                          |
 | CPU             | AMD Ryzen 5 3500                                        |
 | RAM             | SODIMM 2667Mhz 16GB                                     |
 | GPU             | NVIDIA GeForce RTX 2060 Mobile                          |
-| Storage (OS)    | ADATA SX6000PNP 512GB                                   |
+| Storage (OS)    | CSSD-M2O512GBG1NTQ/BICS5 512GB                          |
 | Storage (Games) | Crucial MX500 CT1000MX500SSD1 1TB                       |
 | Network         | Intel Killer AX1650x 200NGW                             |
-| AP (Router)     | ATERM BL902HW (だいぶゴミ 11ac って何)                  |
+| AP (Router)     | ATERM BL902HW (だいぶゴミ 11ac って何)                     |
 |                 |                                                         |
 | Mouse           | Logicool G203 1600DPI                                   |
 | Earphone        | Truthear Hola, GK GS10                                  |
 |                 |                                                         |
 | VR Device       | Oculus Quest 2 128GB                                    |
-| FBT             | HaritoraX 1.1                                           |
-| Link Cable      | [無限 Link ケーブル](https://booth.pm/ja/items/4867830) |
+| FBT             | HaritoraX 1.0 + SlimeVR or Shiftall VR Manager          |
+| Link Cable      | [無限 Link ケーブル](https://booth.pm/ja/items/4867830)   |
