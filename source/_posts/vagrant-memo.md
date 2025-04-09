@@ -10,8 +10,6 @@ tags:
 
 完全にメモ用。
 
-<!-- toc -->
-
 # Vagrantってなに
 
 楽に扱えるDockerみたいな感じ？vagrant initでコンテナ引っ張ってきてvagrant upしてsshすればもう使えそうな感じがする  
