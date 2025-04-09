@@ -43,13 +43,13 @@ render_drafts: false
 post_asset_folder: true
 relative_link: false
 future: true
-syntax_highlighter: highlight.js
-highlight:
-  line_number: true
-  auto_detect: false
-  tab_replace: ""
-  wrap: true
-  hljs: false
+# syntax_highlighter: highlight.js
+# highlight:
+#   line_number: true
+#   auto_detect: false
+#   tab_replace: ""
+#   wrap: true
+#   hljs: false
 prismjs:
   preprocess: true
   line_number: true
@@ -159,3 +159,15 @@ index:
     date: true
     category: true
     tag: false
+
+## Post
+
+code:
+  copy_btn: true
+  highlight:
+    enabled: true
+    line_number: true
+    lib: "highlightjs"
+    highlightjs:
+      style: "github-dark-dimmed"
+      bg_color: true
