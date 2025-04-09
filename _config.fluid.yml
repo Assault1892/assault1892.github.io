@@ -154,3 +154,8 @@ index:
   # Excerpt
   auto_excerpt:
     enable: false
+  # Hide Post Metadata
+  post_meta:
+    date: true
+    category: true
+    tag: false
