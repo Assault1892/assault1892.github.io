@@ -160,7 +160,7 @@ index:
     category: true
     tag: false
 
-## Post
+## Code Highlight
 
 code:
   copy_btn: true
