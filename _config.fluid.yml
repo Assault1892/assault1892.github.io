@@ -54,9 +54,9 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ""
-markdown:
-  plugins:
-    - markdown-it-footnote
+# markdown:
+#   plugins:
+#     - markdown-it-footnote
 marked:
   prependRoot: true
   postAsset: true
@@ -160,6 +160,12 @@ index:
     category: true
     tag: false
 
+## Post
+
+post:
+  footnote:
+    enable: true
+    
 ## Code Highlight
 
 code:
