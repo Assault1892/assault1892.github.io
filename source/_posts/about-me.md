@@ -2,6 +2,7 @@
 title: Profile
 date: 2005-12-06
 permalink: /about/
+hide: true
 ---
 
 名前: あさると (柊野 紗記)  
