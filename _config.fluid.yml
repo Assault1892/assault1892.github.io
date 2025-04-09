@@ -144,9 +144,13 @@ dark_mode:
   enable: true
   default: dark
 
-## Home Slogan
+## Index Page
 
 index:
+  # Slogan
   slogan:
     enable: true
     text: Hi there 🐮
+  # Excerpt
+  auto_excerpt:
+    enable: false
