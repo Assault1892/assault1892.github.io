@@ -135,7 +135,7 @@ navbar:
 ## Font
 
 font:
-  font_family: "Noto Sans JP"
+  font_family: "'M PLUS 1 Code', monospace"
   code_font_size: 90%
 
 ## Darkmode
@@ -150,7 +150,7 @@ index:
   # Slogan
   slogan:
     enable: true
-    text: Hi there 🐮
+    text: "# ls /home/assault/posts"
   # Excerpt
   auto_excerpt:
     enable: false
@@ -160,12 +160,21 @@ index:
     category: true
     tag: false
 
+### slogan feature
+
+fun_features:
+  typing:
+    enable: true
+    typeSpeed: 40
+    cursorChar: "_"
+    loop: false
+
 ## Post
 
 post:
   footnote:
     enable: true
-    
+
 ## Code Highlight
 
 code:
