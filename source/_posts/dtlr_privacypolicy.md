@@ -1,6 +1,7 @@
 ---
 title: "Twitter Link Replacer - プライバシーポリシー"
 date: 2024-01-07 12:00:00
+category: "Twitter Link Replacer"
 tags: "Twitter Link Replacer"
 ---
 

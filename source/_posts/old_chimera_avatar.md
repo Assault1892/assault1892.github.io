@@ -1,5 +1,9 @@
 ---
 title: "旧キメラアバター作成備忘録"
+category: "VRChat"
+tags: 
+  - VRChat
+  - Deprecated!
 date: 2023-05-22
 ---
 

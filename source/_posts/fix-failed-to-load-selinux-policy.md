@@ -1,7 +1,10 @@
 ---
 title: 「Failed to load SELinux Policy」を直す
 date: 2024-05-27 14:28:40
-tags: "Linux"
+category: "雑記"
+tags: 
+    - PC
+    - Linux
 ---
 
 弊校実習環境の Virtual Box 上にある CentOS 7 をミスで異常終了させてしまい、再起動したところ

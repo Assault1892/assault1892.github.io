@@ -1,7 +1,10 @@
 ---
 title: キメラアバターの作り方
 date: 2024-05-31 19:23:22
-tags: "VRChat"
+category: "VRChat"
+tags: 
+  - VRChat
+  - アバター改変
 ---
 
 2024 年 5 月 31 日現在最新の Unity 2022.3.22f1 + Modular Avatar を活用したキメラアバターの作り方。  

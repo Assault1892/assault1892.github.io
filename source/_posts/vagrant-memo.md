@@ -2,9 +2,10 @@
 layout: posts
 title: Vagrant おぼえがき
 date: 2024-09-04 12:25:27
-tags:
-- PC
-- 雑記
+category: "雑記"
+tags: 
+    - PC
+    - Vagrant
 ---
 
 完全にメモ用。
