@@ -3,18 +3,15 @@ title: キャプティブポータルとは
 date: 2025-04-09 14:57:19
 category: "雑記"
 tags: "ネットワーク"
-hide: false
 ---
 
 # キャプティブポータル
 
 **サイゼとかのフリーWiFiに繋ぐと出てくるあの認証画面**および**それらの実装の仕組み**のこと。  
-OSによって出し方は違うが、基本的には勝手にブラウザが立ち上がってきてログイン画面を出してくるようになってる。
+OSによって出し方は違うが、基本的には勝手にブラウザが立ち上がってきてログイン画面を出してくるようになってる。  
+代表的な例では、FREESPOTとか。技術基盤として使われやすいのは **教育機関向けの[eduroam](https://www.eduroam.jp/)、一般市民向けの[cityroam](https://cityroam.jp/)、[OpenRoaming](https://www.ntt-bp.net/product/service/openroaming/index.html)** あたりかな？
 
-![こういう感じの奴](cp_saizeriya.png)
-
-今では事業者側でWiFiを用意してくれて、利用者側も手軽に使えるイイ感じのサービスになっているが、昔はそんなことはなく。  
-どんな歴史を経て今の実装になったのか、遡って調べてみた！
+![こういう感じの奴。OS側が親切に教えてくれている例](cp_saizeriya.png)
 
 # そもそも何に使う奴？
 
@@ -45,34 +42,157 @@ DSとかが主流だった年代だと割とありえた光景のように思う
 3. 認証ページで認証を行ったら通信の妨害をやめ、通常通りインターネットを利用できるようにする。
 4. 認証のタイムアウト時間が経過したり、接続が切れたなどで再接続された場合は必要に応じて再度 1 から手順をやり直す。
 
-図にするとこんな感じ、わかりやすさ重視で正確さには欠ける。
+図にするとこんな感じ。
 
-![](cp_sequence.png)
+![わかりやすさ重視で正確さには欠ける](cp_sequence.png)
 
 # 歴史
 
 目立って出始めたのは2010年とかぐらいだったような気がする？  
-どこでもインターネット接続ができる携帯型ゲーム機が主流になってきたぐらいに使用するAPが増えたような。
+どこでもインターネット接続ができる携帯型ゲーム機[^2]が主流になってきたぐらいに使用するAPが増えたような。
 
 ## 初期の実装
 
-まだHTTP通信 (80, 8080番) でのブラウジングが主流だった時代では (単純に?) HTTP通信をジャックして強制的に認証ページにリダイレクトさせる方法が主流。  
+このとき、アクセスポイントの暗号化は設定されていないか、されていても非常に弱い設定であることが多い。
+
+まだHTTP通信 (80, 8080番) でのブラウジングが主流だった時代では (単純に?) HTTP通信を乗っ取ってHTTP 302で強制的に認証ページにリダイレクトさせる方法が主流だった。  
 また、当時はOS側でいい感じにページを出してくれるとかもなく、適当なページを開いたら認証ページが飛ぶ、みたいな感じで認証をする (させられる) 事が多かった。  
 
-やっていることは現代とそこまでかわらず。TCP/80, 8080の通信をジャックして認証ページにねじまげたあと、認証が完了したらファイアウォールのルールを変えたりして外につなげられるようにしているだけ。  
-ただし接続のパクり方など、やっていることは[中間者攻撃](https://ja.wikipedia.org/wiki/%E4%B8%AD%E9%96%93%E8%80%85%E6%94%BB%E6%92%83)などとあまり変わらず、つまりよろしくないやり方。
+やっていることは端的には**TCP/80, 8080の通信をジャックして認証ページにねじまげたあと、認証が完了したらファイアウォールのルールを変えたりして外につなげられるようにしている**だけ。これは現代でもあまりかわらんかも  
+接続のパクり方など、やっていることは[中間者攻撃](https://ja.wikipedia.org/wiki/%E4%B8%AD%E9%96%93%E8%80%85%E6%94%BB%E6%92%83)などとあまり変わらず、つまりよろしくない。
 
-なお、この方法は現代でもある程度残っている。  
-結局どこまで技術が進んでも**現代において**やっていることは「http通信の向き先をねじまげて認証ページに持っていく」ため、適当な `http://` のサイトにアクセスするだけで認証ページに飛ぶことができる。  
-後述する方法で認証ページにアクセスできなかったとしても、適当なサイトを見ることで認証ページに飛べるため、最終手段として覚えておくと便利。
+その他、HTTP通信のリダイレクトによる誘導以外にも、ICMPリダイレクトを使用したり、DNSサーバーの応答結果を変更したり、キャプティブポータルAPIにより誘導することもある。  
+APIについては後述。
 
-老舗の[FREESPOT](https://www.freespot.com/)など、ゲーム機であれば認証不要のフリーWiFiサービスもある。Switchも対応しているらしい  
+なお、このHTTP通信のリダイレクトによる方法は**現代でもある程度残っている**。  
+結局どこまで技術が進んでも**現代において**やっていることは「**http通信の向き先をねじまげて認証ページに持っていく**」ため、適当な `http://` のサイトにアクセスするだけで認証ページに飛ぶことができる。  
+後述する方法で認証ページにアクセスできなかったとしても、適当なサイトを見ることで認証ページに飛べるため、最終手段として覚えておくと便利。  
+サービスによっては認証ページに誘導するためにhttpサイトのURLを案内することもある (FREESPOTとかまさにそう) 。
+
+一部、ゲーム機であれば認証不要のフリーWiFiサービスもある。  
 
 ## 中期～現在の実装
 
-時代は進み、誰もhttp通信でネットを見なくなった頃になると当然キャプティブポータルは機能しなくなる。  
+時代は進み、誰もhttp通信でネットを見なくなった頃になると当然先述の方法は機能しなくなる。  
 仕組み上http通信をジャックして認証ページに飛ばすものであるため、https通信ではこのジャックが不可能となり、根本的に認証ができなくなる。  
+
+それではキャプティブWiFiの意味が薄れてしまうため、各OS側が歩み寄る形で実装が進んだ。  
+**[Captive Portal Detection (CPD)](https://en.wikipedia.org/wiki/Captive_portal#Detection)** という方法でキャプティブポータルが存在を検出し、存在する場合は認証ページに誘導するという形で実装がされている。
+
+### 具体的には・・・
+
+各OSはネットワーク接続時、以下のURLにアクセスし、所定のリクエストが返ってくるか検証する。  
+返ってきたリクエストが正しいものであればキャプティブポータル等が存在せずそのまま外と接続ができ、逆に違うものが返ってきた場合 (HTTP 302とか) 、キャプティブポータルが存在すると判断して専用ブラウザを開き、ユーザーに認証させる。
+
+| プラットフォーム                       | 接続先                                                                                                                                                                  | 正しいリクエスト                                                                                |
+| :------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Apple系 (iOS/iPadOS/macOS)             | `http://captive.apple.com/hotspot-detect.html`                                                                                                                          | HTTP 304 (Not Modified), `<HTML><HEAD><TITLE>Success</TITLE></HEAD><BODY>Success</BODY></HTML>` |
+| Android系 (Android Based OS, ChromeOS) | `http://connectivitycheck.gstatic.com/generate_204` <br> `http://clients3.google.com/generate_204` <br> `http://google.com/gen_204`                                                                      | HTTP 204 (No Content)                                                                           |
+| Windows                                | `dns.msftncsi.com` に**DNS Lookupした上で**<br>Win10 1607以降: `http://www.msftconnecttest.com/connecttest.txt` <br> Win10 1607以前: `http://www.msftncsi.com/ncsi.txt` | DNS Lookup結果が `131.107.255.255` かつ <br>HTTP 200 (Success), `Microsoft Connect Test` または `Microsoft NCSI` と書かれたRaw テキスト     |
+
+Windowsだけ少し特殊で、まず `dns.msftncsi.com` にDNS Lookup (IPアドレスの解決) した上で、正しいIPアドレスが返ってきたら次に `connecttest.txt` を取りに行く。  
+これは「キャプティブポータルが存在するかどうか」の他に、「DNS応答が返ってこれるかどうか」の切り分けのため。  
+DNS Lookupができなければキャプティブポータル以前の問題であり、インターネットアクセスがないことを示す <small>(`インターネット接続なし`の原因はこれかも)</small> 。  
+DNS Lookupができてなおかつ `connecttest.txt` が正しく返ってこなければ「キャプティブポータルが存在する」とみなす。
+
+OSによって細かな違いはあれど、基本的には「ネットワーク接続時 (および一定時間おき?) に特定URLにリクエストを送り、レスポンスによって疎通確認を行う」、「レスポンスが正しければ通常通りインターネット接続可能、正しくなければキャプティブポータルがあると判断する」の2点は変わらない。  
+
+---
+
+現代では基本的にこの方法でフリーWiFi (や認証が必要なネットワーク) に接続している。  
+ただしこれらの方法ではまだいくつか問題点があり、また今後普及していく (している?) 技術と一部相性が悪いこともある。
+
+そもそもの問題点は「ソフトウェアベンダー各社で実装が違う」ことなどが挙げられる。<small>上のレスポンス一覧を見ればいかに統一されていないかがわかる</small>  
+これらの問題を解消するため、RFC (Request for Comments) に共通化されたキャプティブポータルの仕組みである「Captive Portal API」が策定された。
+
+## 使われて欲しいイイ実装
+
+(もしかしたらもう使われてるかも? ベンダによって対応状況が違う...)
+
+安全で、イイ感じの実装を実現するため、2020年9月頃からRFCにキャプティブポータルAPIが策定。  
+
+- [RFC 8908 Captive Portal API](https://www.rfc-editor.org/rfc/rfc8908.html) ([日本語訳](https://tex2e.github.io/rfc-translater/html/rfc8908.html))
+  - キャプティブポータルAPIに関する文書。デバイスがキャプティブポータルの存在を検知し、認証や規約に同意するなどのアクションに対するインターフェースを提供。
+    - 関連にRFC 7710が存在するが、現在廃止。修正版は以下のRFC 8910。
+      書いてあることも同じだったような。
+- [RFC 8910 Captive-Portal Identification in DHCP and Router Advertisements (RAs)](https://www.rfc-editor.org/rfc/rfc8910.html) ([日本語訳](https://tex2e.github.io/rfc-translater/html/rfc8910.html))
+  - DHCPと[ルーター広告](https://ja.wikipedia.org/wiki/IPv6#近隣探索_(Neighbor_Discovery))によるキャプティブポータルの識別方法に関する文書。デバイスがインターネットアクセスを得る前に認証等が必要な場合に自動的にキャプティブポータルの存在を検知し、ユーザーに知らせるために使用。
+- [RFC 8952 Captive Portal Architecture](https://www.rfc-editor.org/rfc/rfc8952.html) ([日本語訳](https://tex2e.github.io/rfc-translater/html/rfc8952.html))
+  - インターネットアクセスを得る前の認証や情報提供を行うシステムの標準化に関する文書。
+
+この方式の場合、APIサーバーはデバイスに対して[DHCP Option 114](https://www.rfc-editor.org/rfc/rfc8910.html#name-ipv4-dhcp-option)やルーター広告などを用いてJSON形式でAPIへのURLを送信する。  
+この時送られるJSONは以下の形式。
+
+```json
+{
+  "captive": true, // 認証が必要な状態かどうか trueなので認証が必要
+  "user-portal-url": "https://example.org/portal.html", // 認証用URL
+}
+// RFC 8910より引用
+```
+
+`captive` は認証が必要な状態かどうかによって変わる。認証が必要な状態であればtrue  
+`user-portal-url` は実際に認証に使うページ。 `captive` が `true` の場合に接続。  
+この時使用するURLは全てHTTPS。当然APIとの通信もHTTPS通信を使用する [^4] 。
+
+認証が完了したら、クライアントはサーバーに再度リクエストを送り、サーバーはデバイスに対して以下のJSONを返し、認証状態を抜ける。
+
+```json
+{
+   "captive": false, // 認証が必要な状態かどうか falseなので認証は不要
+   "user-portal-url": "https://example.org/portal.html", // 認証用URL
+   "venue-info-url": "https://flight.example.com/entertainment", // 認証完了後に見せたいページのURL
+   "seconds-remaining": 326, // 再度認証が必要になるまでの時間 (秒)
+   "can-extend-session": true // 延長可能か
+}
+// RFC 8910より引用
+```
+`captive`, `user-portal-url` は同じ。  
+`venue-info-url` は情報を提供したい際に使うページ。サービスエリアとか飛行機のポータルサイトとか・・・  
+`seconds-remaining` は認証が切れるまでの秒数。これを過ぎると再度認証が必要になる。  
+`can-extend-session` は再度延長できるかどうか。`true` ならば認証が切れたあと `user-portal-url` に再度誘導する。
+
+ここにはないが `bytes-remaining` というオプションもある。  
+これは `seconds-remaining` と近い。こちらは認証が必要な状態になるまでのトラフィックのバイト数を示す。  
+あまり使われることはないかも...
+
+これらの実装は安全で、便利で、共通化されているためOS依存の処理がないなどいい事ずくめだが、悲しいことに対応したOSが少ない。
+
+実用的なのはAndroid[^5]で、次点でiOS / macOS[^6]。Windowsは対応すらしていない。  
+このため、スマホは楽に繋げられるのにWindowsではなかなか繋げられないといったことがよく起きる。[^7]  
+
+---
+
+以上がキャプティブポータル、並びに関連RFCのおおまかな歴史と概要。  
+現代でHTTP通信をひったくる方法を使っていることはあまりない <small>(CDPやらRFC 8908あたりがえらい)</small> が、結局HTTP通信をもぎとる仕組みはあまり変わっていないので、どうしても繋がらない時に適当な http 通信のサイトを見る方法はしばらくは変わらないだろうか。
+
+現在ではeduroamやcityroam, OpenRoamingを使用したサービスが普及しているっぽい。  
+これらのサービスも良いところだけではなくしんどいところも多くあるよう [^8] で、今後の更新に期待するしかないのかなあと。
+
+街中でフリーWiFiを使う機会があったら、裏ではどのような技術が使われているのか追ってみるのもよさそう。怒られない範囲で！
+
+# 参考文献
+
+この記事を書くにあたって参考にさせていただいた記事など。
+
+- [Wikipedia - Captive Portal](https://en.wikipedia.org/wiki/Captive_portal)
+- [Microsoft Learn - Answers To common questions about NCSI](https://learn.microsoft.com/en-us/windows-server/networking/ncsi/ncsi-frequently-asked-questions)
+- [Chromium Project - Network Portal Detection](https://www.chromium.org/chromium-os/chromiumos-design-docs/network-portal-detection/)
+- [NTTブロードバンドプラットフォーム - キャプティブポータルって一体なに？ フリーWi-Fiをつなぐ時におなじみの「あの画面」のことを調べてみた](https://www.ntt-bp.net/column/blog/2024/05/post-156.html)
+- [にたまご。 - Captive Portalについて](https://ao780.hateblo.jp/entry/2017/02/21/112233)
+- [hgot07 - キャプティブポータルの仕組みと変遷](https://hgot07.hatenablog.com/entry/2023/11/26/082509)
+- [hgot07 - キャプティブポータルの見方を変えて現地情報通知にしよう](https://hgot07.hatenablog.com/entry/2023/12/17/203721)
+- [eduroam/OpenRoaming における現地情報通知](https://nghsig.jp/docs/AXIES2023-venueinfo.pdf)
+- [ao0780 - Captive Portal Detectionについて](https://ao780.hateblo.jp/entry/2017/02/21/112233)
+- [ao0780 - Captive Portal(CAPPORT) APIについて](https://ao780.hateblo.jp/entry/2017/05/08/174221)
 
 ---
 
 [^1]: https://network.yamaha.com/setting/wireless_lan/airlink/captive_portal
+[^2]: ニンテンドーDSとか・・・
+[^3]: Apple公式のドキュメントが存在せず、詳細は未知。
+[^4]: APIサーバーエンドポイントは、HTTPS URI [RFC2818]を使用してHTTPを介してアクセスする必要があり、デフォルトのHTTPSポートを使用する必要があります。 - RFC8908日本語訳より。
+[^5]: Android 11以降。
+[^6]: iOS/iPadOS 15以降、macOS Ventura以降。
+[^7]: よく起きた。うぜえ
+[^8]: OS側でCaptive Portal APIに対応していなかったりなど。
