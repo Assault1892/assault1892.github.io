@@ -92,7 +92,7 @@ APや使用するサービスにもよるが、基本的にログを残す機能
 | :------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | Apple系 (iOS/iPadOS/macOS)             | `http://captive.apple.com/hotspot-detect.html`                                                                                                                          | HTTP 304 (Not Modified), `<HTML><HEAD><TITLE>Success</TITLE></HEAD><BODY>Success</BODY></HTML>` |
 | Android系 (Android Based OS, ChromeOS) | `http://connectivitycheck.gstatic.com/generate_204` <br> `http://clients3.google.com/generate_204` <br> `http://google.com/gen_204`                                                                      | HTTP 204 (No Content)                                                                           |
-| Windows                                | Win10 1607以降: `http://www.msftconnecttest.com/connecttest.txt` <br> Win10 1607以前: `http://www.msftncsi.com/ncsi.txt` | DNS Lookup結果が `131.107.255.255` かつ <br>HTTP 200 (Success), `Microsoft Connect Test` または `Microsoft NCSI` と書かれたRaw テキスト     |
+| Windows                                | Win10 1607以降: `http://www.msftconnecttest.com/connecttest.txt` <br> Win10 1607以前: `http://www.msftncsi.com/ncsi.txt` | HTTP 200 (Success), `Microsoft Connect Test` または `Microsoft NCSI` と書かれたRaw テキスト     |
 
 #### Windows こばなし 
 Windows NCSI <small>(Network Connectivity Status Indicator)</small> には過去「DNSプローブ」とよばれる「**特定のDNSサーバーに対してIPアドレスの名前解決をすることでインターネットアクセスを確認する**」機能があったが、**現在のWindows 11では廃止されているらしい**。  
