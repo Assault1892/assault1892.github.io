@@ -20,7 +20,13 @@
     {
         "title": "Escape from Tarkov",
         "creater": "(C) Battlestate Games 2016",
-        "content": "DEPLOYING TO LOCATION",
-        "youtube": ""
+        "content": "Prepare for Escape",
+        "youtube": "https://www.youtube.com/watch?v=00xprBmokcI"
+    },
+    {
+        "title": "VRChat",
+        "creater": "(C) VRChat Inc.",
+        "content": "Create a Universe of Endless Possibilities",
+        "youtube": "https://hello.vrchat.com/"
     }
 ]
