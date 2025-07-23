@@ -24,9 +24,7 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-fluid": "^1.9.8",
     "hexo-theme-landscape": "^1.0.0",
-    "hexo-toc": "^1.1.0"
-  },
-  "overrides": {
-    "stylus": "https://github.com/stylus/stylus/archive/refs/tags/0.62.0.tar.gz"
+    "hexo-toc": "^1.1.0",
+    "stylus": "github:stylus/stylus#0.62.0"
   }
 }
