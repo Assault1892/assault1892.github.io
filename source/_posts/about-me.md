@@ -12,11 +12,12 @@ hide: true
 - 誕生日: 12月6日
 
 多少のプログラミングとゲームができます。  
-最近は[VRChat](https://vrchat.com/)と[War Thunder](https://warthunder.dmm.com/)と[Escape from Tarkov](https://www.escapefromtarkov.com/)をあそんでいます。
-[VRCX](https://github.com/vrcx-team/VRCX)の日本語翻訳をしていました。最近はお休み気味！
+最近は[VRChat](https://vrchat.com/)と[Escape from Tarkov](https://www.escapefromtarkov.com/)をあそんでいます。
+[VRCX](https://github.com/vrcx-team/VRCX)の日本語翻訳をしていました。
 
 いろいろなことに興味関心があります。気になったことは気が済むまで調べる派。    
-最近は機械学習による画像認識に興味があります。PyTorchとたたかうぞ！
+最近は機械学習による画像認識に興味があります。PyTorchとたたかうぞ！  
+→ (2025/07) 課題で触りました。記事 → [画像分類モデルを自作してみた](../create-a-image-classification-model)
 
 # 経歴
 
@@ -62,6 +63,8 @@ hide: true
 ## 2025 年
 
 - [Easy Anti Cheat Splash Swapper](https://github.com/Assault1892/EACSS)を作った
+- [画像識別モデル](../create-a-image-classification-model)を自作してみた (厳密には転移学習だが)
+- **内定を得た** 最高
 
 # できること
 
@@ -80,6 +83,8 @@ hide: true
   - 小規模なデスクトップアプリケーション開発、Tomcatを使ったWebアプリケーション開発が可能
 - C#
   - お勉強中！とりあえずVisual Studio上でコード書いてビルドするぐらいまではできた。
+- Unity C#
+  - 一瞬だけ触ってました。VRでVRMモデルを眺めるソフト (?) を開発したことがあります。
 - Windows バッチファイル
   - ちょっと書けるかな程度。メインで書けるほどではない。
 
@@ -137,15 +142,15 @@ Adobe系ソフトは高校在籍期間のみ。今は使えず。。。
 | OS              | Windows 11 Home x64 26100.3476                          |
 | CPU             | AMD Ryzen 5 3500                                        |
 | RAM             | SODIMM 2667Mhz 16GB                                     |
-| GPU             | NVIDIA GeForce RTX 2060 Mobile                          |
+| GPU             | NVIDIA GeForce RTX 2060                                 |
 | Storage (OS)    | CSSD-M2O512GBG1NTQ/BICS5 512GB                          |
 | Storage (Games) | Crucial MX500 CT1000MX500SSD1 1TB                       |
 | Network         | Intel Killer AX1650x 200NGW                             |
-| AP (Router)     | ATERM BL902HW (だいぶゴミ 11ac って何)                     |
+| AP (Router)     | わすれた...                                              |
 |                 |                                                         |
-| Mouse           | Logicool G203 1600DPI                                   |
-| Earphone        | Truthear Hola, GK GS10                                  |
+| Mouse           | Logicool G309 1600DPI                                   |
+| Earphone        | KZ Gale, Truthear Hola, GK GS10                         |
 |                 |                                                         |
 | VR Device       | Oculus Quest 2 128GB                                    |
-| FBT             | HaritoraX 1.0 + SlimeVR or Shiftall VR Manager          |
-| Link Cable      | [無限 Link ケーブル](https://booth.pm/ja/items/4867830)   |
+| FBT             | HaritoraX 2 + Shiftall VR Manager                       |
+| VR Wireless AP  | TPLink AX1800                                           |
