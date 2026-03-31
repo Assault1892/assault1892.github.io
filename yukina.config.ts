@@ -8,7 +8,7 @@ const YukinaConfig: Configuration = {
 
   description: "$ ~/home/assault",
 
-  site: "https://assault1892.github.io",
+  site: "https://assault1892.github.io  ",
 
   locale: "ja-JP", // set for website language and date format
 
@@ -33,7 +33,7 @@ const YukinaConfig: Configuration = {
 
   username: "あさると",
   sign: "Hi there!",
-  avatarUrl: "https://s2.loli.net/2025/01/25/FPpTrQSezM8ivbl.webp",
+  avatarUrl: "./src/contents/imgs/assault_icon.png",
   socialLinks: [
     {
       icon: "line-md:github-loop",
