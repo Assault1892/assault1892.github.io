@@ -1,46 +1,94 @@
-# Astro Starter Kit: Basics
+# Yukina
 
-```sh
-npm create astro@latest -- --template basics
+Simple and Elegant Astro Blog Template
+
+![Preview](https://s2.loli.net/2025/01/26/S4URrsj9TFgOKAp.webp)
+
+[中文](https://github.com/WhitePaper233/yukina/blob/main/README_zh.md)
+
+## Demo Preview Links
+
+[🖥️ Live Demo (Vercel)](https://yukina-blog.vercel.app) |
+[🖥️ WhitePaper233's Blog (possibly not the latest version)](https://whitepaper233.top/)
+
+## 🛠️ Build Guide
+
+### 1. Install Node.js version 22 or above
+
+Go to the [Node.js official website](https://nodejs.org/) to download and install the latest version of Node.js.
+
+### 2. Enable Corepack
+
+```bash
+corepack enable
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 3. Install pnpm
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+corepack enable pnpm
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### 4. Install Dependencies
 
-## 🧞 Commands
+```bash
+pnpm install
+```
 
-All commands are run from the root of the project, from a terminal:
+### 5. Build Search Index
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+pnpm build
+```
 
-## 👀 Want to learn more?
+### 6. Start Development Server
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+pnpm dev
+```
+
+### 7. Build Project
+
+```bash
+pnpm build
+```
+
+### 8. Preview Project
+
+```bash
+pnpm preview
+```
+
+## 🗺️ Roadmap
+
+### Recent
+
+✅ - Completed | 🧪 - In Testing | 🚧 - In Progress | ⏳ - Planned
+
+| Status | Project                                             |
+| ------ | --------------------------------------------------- |
+| 🧪     | Basic feature implementation                        |
+| 🧪     | Refactoring some code, optimizing overall structure |
+| 🧪     | Optimizing animation effects                        |
+| 🧪     | Mobile adaptation                                   |
+| 🚧     | Optimizing website performance                      |
+| 🧪     | Adjustable colors                                   |
+| 🧪     | Adding RSS, SiteMap, and other features             |
+| 🧪     | More build options (e.g., SLUG generation methods)  |
+| ⏳     | Adding Live2D character                             |
+| 🧪     | Search functionality                                |
+| 🧪     | i18n                                                |
+
+### Long-term
+
+| Status | Project                                        |
+| ------ | ---------------------------------------------- |
+| ⏳     | Developing an easy-to-manage CLI and small CMS |
+| ⏳     | Slidev components                              |
+| ⏳     | More Markdown components                       |
+
+## 🙏 Special Thanks
+
+- [Hexo Shoka Theme](https://github.com/amehime/hexo-theme-shoka) for providing design ideas
+
+- [Astro Fuwari Template](https://github.com/saicaca/fuwari) for providing the main design ideas and some code implementations
