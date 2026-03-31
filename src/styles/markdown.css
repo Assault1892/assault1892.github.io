@@ -1,142 +1,121 @@
-.article code:not(pre code)::before {
-  content: none !important;
-}
+.custom-md {
+    h1 {
+        @apply text-3xl;
+    }
 
-.article code:not(pre code)::after {
-  content: none !important;
-}
+    h1, h2, h3, h4, h5, h6 {
+        .anchor {
+            @apply transition -m-0.5 ml-[0.2ch] p-0.5 select-none opacity-0 no-underline !important;
 
-.article code:not(pre code) {
-  @apply text-sm;
-  font-family: var(--code-font) !important;
-  border-radius: 4px;
-  color: var(--primary-color) !important;
-  background-color: var(--primary-color-lighten) !important;
-}
+            .anchor-icon {
+                @apply mx-[0.45ch] !important;
+            }
+        }
 
-.article h1,
-.article h2,
-.article h3,
-.article h4,
-.article h5,
-.article h6 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-}
+        &:hover {
+            .anchor {
+                @apply opacity-100 !important;
+            }
+        }
+    }
 
-.article h1::before,
-.article h2::before,
-.article h3::before,
-.article h4::before,
-.article h5::before,
-.article h6::before {
-  position: absolute;
-  display: block;
-  content: " ";
-  background-color: var(--primary-color);
-  top: 2.5px;
-  bottom: 3px;
-  width: 0.3rem;
-  border-radius: 4px;
-}
+    a:not(.no-styling) {
+        @apply relative bg-none link font-medium text-[var(--primary)]
+        underline decoration-[var(--link-underline)] decoration-1 decoration-dashed underline-offset-4;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+        display: inline-block;
+    
+        &:hover, &:active {
+            @apply decoration-transparent;
+            background: var(--btn-plain-bg-hover);
+            border-bottom: 1px dashed var(--link-hover);
+            text-decoration: none;
+        }
+    }
 
-.article h1 > a,
-.article h2 > a,
-.article h3 > a,
-.article h4 > a,
-.article h5 > a,
-.article h6 > a {
-  @apply m-2;
-}
+    code {
+        @apply bg-[var(--inline-code-bg)] text-[var(--inline-code-color)] px-1 py-0.5 rounded-md overflow-hidden;
 
-.article li::marker {
-  color: var(--primary-color) !important;
-}
+        font-family: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+        &:before {
+            content:none;
+        }
+        &:after {
+            content:none;
+        }
 
-.article blockquote {
-  border-inline-start-color: var(--primary-color) !important;
-}
+        counter-reset: line;
+        span.line {
+            &:before {
+                @apply text-white/25 mr-4 w-4 inline-block;
+                content: counter(line);
+                counter-increment: line;
+                direction: rtl;
+            }
+            &:last-child:empty, &:last-child:has(> span:empty:only-child) {
+                display: none;
+            }
+        }
+    }
 
-.article blockquote {
-  @apply py-0.5 pl-3 pr-3 lg:pl-4;
-  font-style: normal !important;
-  border-radius: 0.25rem;
-  background-color: var(--primary-color-transparent) !important;
-}
+    .copy-btn {
+        all: initial;
+        @apply btn-regular-dark opacity-0 shadow-lg shadow-black/50 absolute active:scale-90 h-8 w-8 top-3 right-3 text-sm rounded-lg transition-all ease-in-out z-20 cursor-pointer;
+    }
+    .frame:hover .copy-btn {
+        opacity: 1;
+    }
 
-.article blockquote blockquote {
-  @apply my-1;
-}
+    .copy-btn-icon {
+        @apply absolute top-1/2 left-1/2 transition -translate-x-1/2 -translate-y-1/2 w-4 h-4 fill-white pointer-events-none;
+    }
+    .copy-btn .copy-icon {
+        @apply opacity-100 fill-white dark:fill-white/75;
+    }
+    .copy-btn.success .copy-icon {
+        @apply opacity-0 fill-[var(--deep-text)]
+    }
+    .copy-btn .success-icon {
+        @apply opacity-0 fill-white;
+    }
+    .copy-btn.success .success-icon {
+        @apply opacity-100
+    }
 
-.article blockquote p {
-  padding: 0;
-  margin: 0;
-  color: var(--text-color);
-}
+    .expressive-code {
+        @apply my-4;
+        ::selection {
+            @apply bg-[var(--codeblock-selection)];
+        }
+    }
 
-.article blockquote p:first-child {
-  padding-top: 0.3rem;
-}
 
-.article blockquote p:last-child {
-  padding-bottom: 0.3rem;
-}
+    ul, ol {
+        li::marker {
+            @apply text-[var(--primary)];
+        }
+    }
 
-.article blockquote p::before {
-  content: "" !important;
-}
+    blockquote {
+        @apply not-italic border-transparent relative;
+        font-weight: inherit;
 
-.article blockquote p::after {
-  content: "" !important;
-}
+        &:before {
+            @apply content-[''] absolute -left-1 block transition bg-[var(--btn-regular-bg)] h-full w-1 rounded-full;
+        }
 
-.article a {
-  color: var(--primary-color) !important;
-}
+        /* Remove the double quotes from default styles */
+        p:before, p:after {
+            @apply content-none;
+        }
 
-.article hr {
-  @apply my-6;
-  border-color: var(--primary-color-lighten) !important;
-}
+    }
 
-.article pre {
-  @apply my-3;
-  overflow: hidden !important;
-}
-
-.article span.line {
-  font-size: 14px !important;
-  line-height: normal;
-  font-family: var(--code-font) !important;
-}
-
-.article code {
-  counter-reset: line;
-}
-
-.article span.line:before {
-  content: counter(line);
-  counter-increment: line;
-  direction: rtl;
-  display: inline-block;
-  margin-right: 1rem;
-  width: 1rem;
-  color: rgba(255, 255, 255, 0.25);
-}
-
-.article span.line:last-child:empty,
-.article span.line:last-child:has(> .article span:empty:only-child) {
-  display: none;
-}
-
-.article p {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.article .astro-code {
-  border-radius: 0.75rem !important;
-  scrollbar-width: thin;
+    .katex-display-container {
+        max-width: 100%;
+        overflow-x: auto;
+        margin: 1em 0;
+    }
+    
 }
